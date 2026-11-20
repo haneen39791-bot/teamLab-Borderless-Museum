@@ -171,8 +171,11 @@ ul { padding: 0; list-style: none; }
 .media--g8 { --media-grad: linear-gradient(140deg, #142c3a, #0d9488); }
 
 /* ---------------- Hero ---------------- */
-.hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 110px 0 90px; overflow: hidden; }
-.hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .85; pointer-events: none; }
+.hero {
+  position: relative; min-height: 100vh; display: flex; align-items: center; padding: 110px 0 90px; overflow: hidden;
+  /* Homepage backdrop: img1 with a soft navy overlay from the existing palette to keep text legible */
+  background: linear-gradient(180deg, rgba(11, 18, 32, .45), rgba(11, 18, 32, .78)), url('../img/img1.jpg') center center / cover no-repeat;
+}
 .hero-glow {
   position: absolute; width: 780px; height: 780px; border-radius: 50%; inset-inline-end: -260px; top: -260px;
   background: radial-gradient(circle, rgba(251, 191, 36, .28), transparent 65%); filter: blur(20px); pointer-events: none;
