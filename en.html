@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="teamLab Borderless Jeddah: an interactive digital art museum in Jeddah Historic District. Explore the worlds, book your ticket, and discover timings, holidays and news.">
+  <meta name="theme-color" content="#0b1220">
+  <title>teamLab Borderless | Jeddah - Saudi Arabia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ Header ============ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="teamLab Borderless - Home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4">
+            <path d="M24 24c-5-8-9-11-13-11C6 13 3 17 3 22s3 9 8 9c5 0 9-4 13-7 4 3 8 7 13 7 5 0 8-4 8-9s-3-9-8-9c-4 0-8 3-13 11Z"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>teamLab Borderless</strong>
+          <small>Jeddah · Saudi Arabia</small>
+        </span>
+      </a>
+
+      <nav class="nav" id="primary-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#overview">Overview</a>
+        <a href="#worlds">Worlds</a>
+        <a href="#artworks">Artworks</a>
+        <a href="#tickets">Tickets</a>
+        <a href="#news">News</a>
+        <a href="#visit">Visit</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="lang-switch" href="index.html" lang="ar" aria-label="النسخة العربية" title="العربية">ع</a>
+        <button class="btn btn--small btn--primary" type="button" data-book-scroll>Book tickets</button>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ Hero ============ -->
+    <section class="hero" id="home">
+      <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow"><span class="eyebrow-dot"></span> teamLab Borderless · Historic Jeddah</span>
+          <h1 class="hero-title">
+            teamLab Borderless
+            <span class="accent-text">Discover a world beyond imagination</span>
+          </h1>
+          <p class="hero-lead">What if art became a world you could walk into, touch and interact with?</p>
+          <p class="hero-text">At teamLab Borderless, light, colour and movement become extraordinary artistic experiences. Works overlap and change constantly, giving you a world with no walls and no end to its surprises.</p>
+          <div class="hero-actions">
+            <button class="btn btn--primary" type="button" data-book-scroll>Start your journey <span aria-hidden="true">→</span></button>
+            <a class="btn btn--ghost" href="#worlds">Explore the worlds</a>
+            <a class="btn btn--text" href="#artworks">Discover the experiences <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><strong>10,000</strong><span>square metres of wonder</span></div>
+            <div class="stat"><strong>80+</strong><span>interactive artworks</span></div>
+            <div class="stat"><strong>5</strong><span>connected worlds</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Museum illustration">
+          <div class="hero-frame media media--hero" data-img="assets/img/hero-teamlab.svg" role="img" aria-label="teamLab Borderless Jeddah museum entrance">
+            <div class="media__placeholder">
+              <span class="media__symbol">✦</span>
+              <strong>Image placeholder</strong>
+              <small>assets/img/hero-teamlab.svg</small>
+            </div>
+          </div>
+          <div class="hero-float hero-float--one">
+            <span class="hero-float__num">01</span>
+            <span>Light</span>
+          </div>
+          <div class="hero-float hero-float--two">
+            <span class="hero-float__num">02</span>
+            <span>Movement</span>
+          </div>
+          <div class="hero-float hero-float--three">
+            <span class="hero-float__num">03</span>
+            <span>Imagination</span>
+          </div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to next section"><span></span></a>
+    </section>
+
+    <!-- ============ About ============ -->
+    <section class="section section--tint" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">About the museum</span>
+          <h2 class="section-title">What is teamLab Borderless?</h2>
+          <p class="section-lead">A museum of interactive digital art where art, technology and creativity come together in an immersive experience.</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-media reveal">
+            <div class="media media--about" data-img="assets/img/about-museum.svg" role="img" aria-label="A view inside the museum">
+              <div class="media__placeholder">
+                <span class="media__symbol">✦</span>
+                <strong>Image placeholder</strong>
+                <small>assets/img/about-museum.svg</small>
+              </div>
+            </div>
+            <div class="about-badge">
+              <strong>First</strong>
+              <span>permanent museum of its kind<br>in the Middle East</span>
+            </div>
+          </div>
+          <div class="about-copy reveal">
+            <p>Located in <strong>Culture Square in Historic Jeddah</strong>, it is the first permanent museum of its kind in the Middle East. It spans nearly <strong>10,000 square metres</strong> and houses more than <strong>80 artworks</strong> that interact with one another and with visitors.</p>
+            <div class="quote-card">
+              <span class="quote-mark" aria-hidden="true">“</span>
+              <p>Art is not just a painting we look at — it is an experience we live and take part in, where every movement and discovery can lead to a new scene.</p>
+            </div>
+            <h3 class="mini-title">The idea behind the museum</h3>
+            <p>Here, artworks move and change before your eyes, travelling from one space to another with no fixed route. You are not a spectator; your presence and movement are part of the artwork itself.</p>
+            <div class="about-chips">
+              <span>Digital art</span><span>Immersive lighting</span><span>Movement interaction</span><span>Co-creation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Overview ============ -->
+    <section class="section section--overview" id="overview">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Overview</span>
+          <h2 class="section-title">Inside the museum... things that tell their stories</h2>
+          <p class="section-lead">Every element at teamLab Borderless has an idea, a story and a purpose. Discover what makes each space an experience of its own.</p>
+        </div>
+        <div class="overview-grid">
+          <article class="overview-card reveal">
+            <div class="overview-card__head"><span class="overview-icon" aria-hidden="true">∞</span><span class="overview-num">01</span></div>
+            <h3>Borderless Works</h3>
+            <span class="overview-label">The idea</span>
+            <p class="overview-text">Artworks are not confined to separate rooms; they travel through the spaces and overlap, so you can never tell where one ends and another begins.</p>
+            <p class="overview-goal"><strong>Purpose:</strong> to break down boundaries between artworks and spaces, making the museum one connected world.</p>
+          </article>
+          <article class="overview-card reveal">
+            <div class="overview-card__head"><span class="overview-icon" aria-hidden="true">✧</span><span class="overview-num">02</span></div>
+            <h3>Forest of Lamps</h3>
+            <span class="overview-label">The story</span>
+            <p class="overview-text">Thousands of lamps light up and fade to a shifting rhythm, reflecting on a glossy floor so the scene seems to stretch into infinity.</p>
+            <p class="overview-goal"><strong>Concept:</strong> to make visitors lose their sense of distance and sink into a light with no borders.</p>
+          </article>
+          <article class="overview-card reveal">
+            <div class="overview-card__head"><span class="overview-icon" aria-hidden="true">≋</span><span class="overview-num">03</span></div>
+            <h3>Sketch Ocean</h3>
+            <span class="overview-label">The story</span>
+            <p class="overview-text">A visitor draws a creature on paper, and before long it is swimming in a digital ocean alongside drawings from other visitors.</p>
+            <p class="overview-goal"><strong>Purpose:</strong> to turn a child's imagination into a living scene that everyone helps create.</p>
+          </article>
+          <article class="overview-card reveal">
+            <div class="overview-card__head"><span class="overview-icon" aria-hidden="true">❀</span><span class="overview-num">04</span></div>
+            <h3>EN TEA HOUSE</h3>
+            <span class="overview-label">The idea</span>
+            <p class="overview-text">As tea is poured into the cup, digital flowers bloom and keep unfolding while the tea remains, then fade as it empties.</p>
+            <p class="overview-goal"><strong>Purpose:</strong> to blend taste and calm with digital art in one small moment of reflection.</p>
+          </article>
+          <article class="overview-card reveal">
+            <div class="overview-card__head"><span class="overview-icon" aria-hidden="true">◎</span><span class="overview-num">05</span></div>
+            <h3>Visitor Movement</h3>
+            <span class="overview-label">The idea</span>
+            <p class="overview-text">The artworks do not simply move — they respond to you. Coming closer, touching or jumping changes the scene instantly.</p>
+            <p class="overview-goal"><strong>Purpose:</strong> to make the visitor part of the artwork rather than a mere observer.</p>
+          </article>
+          <article class="overview-card reveal">
+            <div class="overview-card__head"><span class="overview-icon" aria-hidden="true">↻</span><span class="overview-num">06</span></div>
+            <h3>Time &amp; Nature</h3>
+            <span class="overview-label">The purpose</span>
+            <p class="overview-text">Scenes change with time, the seasons and the visitors, so you never experience the same artwork twice in exactly the same way.</p>
+            <p class="overview-goal"><strong>Concept:</strong> that art, like nature, never stops renewing and changing.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Worlds ============ -->
+    <section class="section" id="worlds">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Explore the art worlds</span>
+          <h2 class="section-title">Five worlds... with no limits to discovery</h2>
+          <p class="section-lead">Each world is an experience in its own right, yet the artworks overlap and travel between spaces to create a journey that never repeats.</p>
+        </div>
+
+        <div class="world-grid">
+          <article class="world-card reveal" data-title="Athletics Forest" data-en="غابة الألعاب الحركية" data-desc="A three-dimensional world full of physical challenges and creative experiences, where visitors explore spaces through movement and interaction with the digital environment." data-extra="Wear comfortable clothes — you will jump, climb and move freely between interactive platforms and walls." data-duration="About 25 minutes">
+            <div class="media media--world-1" data-img="assets/img/Athletics-Forest.jpe" role="img" aria-label="Athletics Forest">
+              <div class="media__placeholder"><span class="media__symbol">✦</span><strong>Image placeholder</strong><small>Athletics-Forest.jpe</small></div>
+            </div>
+            <div class="world-card__body">
+              <span class="badge">Physical experience</span>
+              <h3>Athletics Forest</h3>
+              <span class="en-name" dir="rtl">غابة الألعاب الحركية</span>
+              <p>A three-dimensional world full of physical challenges and creative experiences, where visitors explore through movement.</p>
+              <button class="card-link" type="button" data-detail>Learn more <span aria-hidden="true">→</span></button>
+            </div>
+          </article>
+
+          <article class="world-card reveal" data-title="Future Park" data-en="حديقة المستقبل" data-desc="A creative space that encourages sharing and collaboration, where visitors help build a shared artistic world through their ideas and interactions." data-extra="Your drawings appear instantly on walls and floors; work with others to watch your world change together." data-duration="About 20 minutes">
+            <div class="media media--world-2" data-img="assets/img/Future-Park.jpe" role="img" aria-label="Future Park">
+              <div class="media__placeholder"><span class="media__symbol">✦</span><strong>Image placeholder</strong><small>Future-Park.jpe</small></div>
+            </div>
+            <div class="world-card__body">
+              <span class="badge">Co-creation</span>
+              <h3>Future Park</h3>
+              <span class="en-name" dir="rtl">حديقة المستقبل</span>
+              <p>A creative space that encourages sharing and collaboration, where visitors build a shared artistic world.</p>
+              <button class="card-link" type="button" data-detail>Learn more <span aria-hidden="true">→</span></button>
+            </div>
+          </article>
+
+          <article class="world-card reveal" data-title="Forest of Lamps" data-en="غابة المصابيح" data-desc="A visual experience where lamps, colours and reflections intertwine to create a world of light that seems to stretch without end." data-extra="Turn off your camera flash and let your eyes adjust to the dark to discover layers of light and endless reflections." data-duration="About 15 minutes">
+            <div class="media media--world-3" data-img="assets/img/Forest-of-Lamps.jpe" role="img" aria-label="Forest of Lamps">
+              <div class="media__placeholder"><span class="media__symbol">✦</span><strong>Image placeholder</strong><small>Forest-of-Lamps.jpe</small></div>
+            </div>
+            <div class="world-card__body">
+              <span class="badge">Light &amp; reflection</span>
+              <h3>Forest of Lamps</h3>
+              <span class="en-name" dir="rtl">غابة المصابيح</span>
+              <p>A visual experience where lamps, colours and reflections intertwine into a seemingly endless world of light.</p>
+              <button class="card-link" type="button" data-detail>Learn more <span aria-hidden="true">→</span></button>
+            </div>
+          </article>
+
+          <article class="world-card reveal" data-title="Sketch Ocean" data-en="محيط الرسومات" data-desc="An artistic experience that lets visitors help create a digital ocean world, where drawings become creatures inside the virtual sea." data-extra="Draw a creature on the provided paper, then watch it swim in the digital ocean alongside other visitors' drawings." data-duration="About 20 minutes">
+            <div class="media media--world-4" data-img="assets/img/Sketch-Ocean.jpe" role="img" aria-label="Sketch Ocean">
+              <div class="media__placeholder"><span class="media__symbol">✦</span><strong>Image placeholder</strong><small>Sketch-Ocean.jpe</small></div>
+            </div>
+            <div class="world-card__body">
+              <span class="badge">Digital drawing</span>
+              <h3>Sketch Ocean</h3>
+              <span class="en-name" dir="rtl">محيط الرسومات</span>
+              <p>An experience where drawings become creatures swimming inside a virtual ocean created by the visitors.</p>
+              <button class="card-link" type="button" data-detail>Learn more <span aria-hidden="true">→</span></button>
+            </div>
+          </article>
+
+          <article class="world-card reveal" data-title="EN TEA HOUSE" data-en="بيت الشاي" data-desc="An experience combining tea and digital art, where digital flowers appear and bloom inside the cup as tea is poured, continuing while the tea remains." data-extra="Sit down, order a cup of tea and watch the digital flowers bloom and change with every sip. Reserved for museum guests." data-duration="About 15 minutes">
+            <div class="media media--world-5" data-img="assets/img/EN-TEA-HOUSE.jpe" role="img" aria-label="EN TEA HOUSE">
+              <div class="media__placeholder"><span class="media__symbol">✦</span><strong>Image placeholder</strong><small>EN-TEA-HOUSE.jpe</small></div>
+            </div>
+            <div class="world-card__body">
+              <span class="badge">Taste &amp; imagination</span>
+              <h3>EN TEA HOUSE</h3>
+              <span class="en-name" dir="rtl">بيت الشاي</span>
+              <p>Digital flowers bloom inside your cup as tea is poured, and keep unfolding for as long as the tea remains.</p>
+              <button class="card-link" type="button" data-detail>Learn more <span aria-hidden="true">→</span></button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Artworks ============ -->
+    <section class="section section--tint" id="artworks">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Artworks worth discovering</span>
+          <h2 class="section-title">Unforgettable interactive artworks</h2>
+          <p class="section-lead">Works that change with your touch and movement, creating a different moment every time you approach them.</p>
+        </div>
+        <div class="art-grid">
+          <article class="art-card reveal" data-title="A touch that changes the scene" data-en="Untitled" data-desc="Suspended forms respond to your touch as colours flow and notes spread through the space, renewing the scene every moment." data-extra="Every touch reshapes the colour and sound; try touching together with friends to see the artwork evolve differently." data-duration="Open interactive experience">
+            <div class="media media--art-1" data-img="assets/img/Untitled.jpe" role="img" aria-label="Artwork: Untitled">
+              <div class="media__placeholder"><span class="media__symbol">✦</span><strong>Image placeholder</strong><small>Untitled.jpe</small></div>
+            </div>
+            <div class="art-card__body">
+              <div class="art-card__top"><span class="badge">Touch &amp; light</span><span class="art-index">01</span></div>
+              <h3>A touch that changes the scene</h3>
+              <span class="en-name" dir="ltr">Untitled</span>
+              <div class="art-explain"><span>How the experience works</span><p>Suspended forms respond to your touch as colours flow and notes spread through the space, renewing the scene every moment.</p></div>
+              <button class="card-link" type="button" data-detail>Learn more <span aria-hidden="true">→</span></button>
+            </div>
+          </article>
+
+          <article class="art-card reveal" data-title="A rhythm that moves with you" data-en="Multi Jumping Universe" data-desc="As you move from one level to another, the scene breaks apart and returns in different colours and patterns; the rhythm of your movement paints the picture." data-extra="Your jumps transform the scene; each jump opens a new layer of colour and pattern in the digital world." data-duration="Physical experience">
+            <div class="media media--art-2" data-img="assets/img/Multi-Jumping-Universe.webp" role="img" aria-label="Artwork: Multi Jumping Universe">
+              <div class="media__placeholder"><span class="media__symbol">✦</span><strong>Image placeholder</strong><small>Multi-Jumping-Universe.webp</small></div>
+            </div>
+            <div class="art-card__body">
+              <div class="art-card__top"><span class="badge">Digital movement</span><span class="art-index">02</span></div>
+              <h3>A rhythm that moves with you</h3>
+              <span class="en-name" dir="ltr">Multi Jumping Universe</span>
+              <div class="art-explain"><span>How the experience works</span><p>As you move from one level to another, the scene breaks apart and returns in different colours and patterns; your rhythm paints the picture.</p></div>
+              <button class="card-link" type="button" data-detail>Learn more <span aria-hidden="true">→</span></button>
+            </div>
+          </article>
+
+          <article class="art-card reveal" data-title="A sky that moves around you" data-en="Aerial Climbing through a Flock of Colored Birds" data-desc="Any approach pushes the flying creatures to change course, opening new angles and making the space feel as if it stretches without end." data-extra="As you approach, the birds take flight and change direction, revealing a new scene with every step." data-duration="Visual experience">
+            <div class="media media--art-3" data-img="assets/img/Aerial-Climbing.webp" role="img" aria-label="Artwork: Aerial Climbing through a Flock of Colored Birds">
+              <div class="media__placeholder"><span class="media__symbol">✦</span><strong>Image placeholder</strong><small>Aerial-Climbing.webp</small></div>
+            </div>
+            <div class="art-card__body">
+              <div class="art-card__top"><span class="badge">Birds &amp; light</span><span class="art-index">03</span></div>
+              <h3>A sky that moves around you</h3>
+              <span class="en-name" dir="ltr">Aerial Climbing through a Flock of Colored Birds</span>
+              <div class="art-explain"><span>How the experience works</span><p>Any approach pushes the flying creatures to change course, opening new angles and making the space feel endless.</p></div>
+              <button class="card-link" type="button" data-detail>Learn more <span aria-hidden="true">→</span></button>
+            </div>
+          </article>
+
+          <article class="art-card reveal" data-title="Beyond the window" data-en="A Window to the Universe where Little People Live" data-desc="Look closely at the fine details: tiny creatures move to the rhythm of time and respond to your presence with a change in motion." data-extra="Come closer and watch the details; the little characters move and react to time and to you standing there." data-duration="Reflection &amp; interaction">
+            <div class="media media--art-4" data-img="assets/img/Window-to-the-Universe.avif" role="img" aria-label="Artwork: A Window to the Universe where Little People Live">
+              <div class="media__placeholder"><span class="media__symbol">✦</span><strong>Image placeholder</strong><small>Window-to-the-Universe.avif</small></div>
+            </div>
+            <div class="art-card__body">
+              <div class="art-card__top"><span class="badge">Imaginary world</span><span class="art-index">04</span></div>
+              <h3>Beyond the window</h3>
+              <span class="en-name" dir="ltr">A Window to the Universe where Little People Live</span>
+              <div class="art-explain"><span>How the experience works</span><p>Look closely at the fine details: tiny creatures move to the rhythm of time and respond to your presence.</p></div>
+              <button class="card-link" type="button" data-detail>Learn more <span aria-hidden="true">→</span></button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Difference ============ -->
+    <section class="section" id="difference">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">A museum without borders... what is the secret?</span>
+          <h2 class="section-title">What makes the museum different?</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <span class="feature-icon" aria-hidden="true">✧</span>
+            <h3>Moving art</h3>
+            <p>Artworks never stay still — they change and evolve before your eyes.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-icon" aria-hidden="true">◎</span>
+            <h3>Interactive experience</h3>
+            <p>Visitors are not just observers; they are an essential part of the artwork.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-icon" aria-hidden="true">∞</span>
+            <h3>Connected worlds</h3>
+            <p>Artworks can travel and overlap between the different spaces.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-icon" aria-hidden="true">↗</span>
+            <h3>Discovery without a route</h3>
+            <p>Visitors can wander and explore the worlds in their own way, with no set map.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Tickets & Booking ============ -->
+    <section class="section section--tint" id="tickets">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Tickets &amp; booking</span>
+          <h2 class="section-title">Choose your ticket and begin the journey</h2>
+          <p class="section-lead">Book in advance to secure your preferred time, especially on weekends and during special occasions.</p>
+        </div>
+
+        <div class="ticket-grid">
+          <article class="ticket-card reveal" data-ticket="general">
+            <span class="ticket-tag">Most popular</span>
+            <h3>General Admission</h3>
+            <p class="ticket-price"><strong>120</strong><span>SAR</span></p>
+            <ul><li>Entry to all worlds</li><li>One visitor (12 years and over)</li><li>Valid for the selected visit date</li></ul>
+            <button class="btn btn--ghost btn--full" type="button" data-select-ticket="general">Choose ticket</button>
+          </article>
+          <article class="ticket-card reveal" data-ticket="child">
+            <h3>Child Ticket</h3>
+            <p class="ticket-price"><strong>80</strong><span>SAR</span></p>
+            <ul><li>Ages 3 to 11</li><li>Entry to all worlds</li><li>Must be accompanied by an adult</li></ul>
+            <button class="btn btn--ghost btn--full" type="button" data-select-ticket="child">Choose ticket</button>
+          </article>
+          <article class="ticket-card reveal" data-ticket="family">
+            <span class="ticket-tag ticket-tag--alt">Best value</span>
+            <h3>Family Ticket</h3>
+            <p class="ticket-price"><strong>350</strong><span>SAR</span></p>
+            <ul><li>2 adults + 2 children</li><li>Entry to all worlds</li><li>Save 50 SAR vs individual tickets</li></ul>
+            <button class="btn btn--ghost btn--full" type="button" data-select-ticket="family">Choose ticket</button>
+          </article>
+          <article class="ticket-card reveal" data-ticket="vip">
+            <h3>VIP Experience</h3>
+            <p class="ticket-price"><strong>250</strong><span>SAR</span></p>
+            <ul><li>Skip-the-line entry</li><li>Guided photo tour</li><li>Museum souvenir gift</li></ul>
+            <button class="btn btn--ghost btn--full" type="button" data-select-ticket="vip">Choose ticket</button>
+          </article>
+        </div>
+
+        <p class="ticket-note reveal">Children under 3 enter free. Prices include VAT and may change during special occasions; check the News section before visiting.</p>
+
+        <div class="booking-panel reveal" id="booking-panel">
+          <div class="booking-head">
+            <div>
+              <span class="eyebrow">Direct booking</span>
+              <h3>Book your visit in minutes</h3>
+            </div>
+            <button class="btn btn--text" type="button" id="show-bookings">My bookings <span aria-hidden="true">→</span></button>
+          </div>
+          <form id="booking-form" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="book-ticket">Ticket type</label>
+                <select id="book-ticket" name="ticket" required>
+                  <option value="general">General Admission — 120 SAR</option>
+                  <option value="child">Child Ticket — 80 SAR</option>
+                  <option value="family">Family Ticket — 350 SAR</option>
+                  <option value="vip">VIP Experience — 250 SAR</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="book-date">Visit date</label>
+                <input id="book-date" name="date" type="date" required>
+                <small class="field-hint" id="date-hint">Monday is our weekly closing day — please choose another day.</small>
+              </div>
+              <div class="field">
+                <label for="book-time">Time</label>
+                <select id="book-time" name="time" required></select>
+              </div>
+              <div class="field">
+                <label for="book-qty">Number of tickets</label>
+                <div class="stepper">
+                  <button type="button" data-step="-1" aria-label="Decrease quantity">−</button>
+                  <input id="book-qty" name="qty" type="number" value="1" min="1" max="10" readonly>
+                  <button type="button" data-step="1" aria-label="Increase quantity">+</button>
+                </div>
+              </div>
+              <div class="field">
+                <label for="book-name">Full name</label>
+                <input id="book-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required>
+              </div>
+              <div class="field">
+                <label for="book-phone">Mobile number</label>
+                <input id="book-phone" name="phone" type="tel" autocomplete="tel" dir="ltr" placeholder="05xxxxxxxx" required>
+              </div>
+            </div>
+            <div class="booking-summary">
+              <div>
+                <span>Total</span>
+                <strong id="booking-total">120 SAR</strong>
+              </div>
+              <p id="booking-message" role="status" aria-live="polite"></p>
+              <button class="btn btn--primary" type="submit">Confirm booking <span aria-hidden="true">→</span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ News ============ -->
+    <section class="section section--tint" id="news">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">News &amp; announcements</span>
+          <h2 class="section-title">What's new in a world without borders</h2>
+          <p class="section-lead">Everything happening at the museum: openings, events and notices before your visit.</p>
+        </div>
+        <div class="news-filters reveal" role="group" aria-label="Filter news">
+          <button class="filter-btn is-active" type="button" data-news-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" type="button" data-news-filter="news" aria-pressed="false">News</button>
+          <button class="filter-btn" type="button" data-news-filter="event" aria-pressed="false">Events</button>
+          <button class="filter-btn" type="button" data-news-filter="notice" aria-pressed="false">Notices</button>
+        </div>
+        <div class="news-grid" id="news-grid">
+          <article class="news-card reveal" data-cat="news" data-full="The museum has opened a new version of Forest of Lamps with expanded lighting design and a reflective floor that doubles the depth of the scene. The new version is available to all visitors with a general ticket and runs until further notice.">
+            <div class="news-meta"><span class="news-cat">News</span><time datetime="2026-11-12">12 November 2026</time></div>
+            <h3>Forest of Lamps reopens with a new design</h3>
+            <p>Expanded lighting and a reflective floor that doubles the depth of the luminous scene.</p>
+            <button class="card-link" type="button" data-news-toggle>Read more <span aria-hidden="true">→</span></button>
+          </article>
+          <article class="news-card reveal" data-cat="event" data-full="An open creative workshop for children and families where they draw sea creatures that appear live inside Sketch Ocean. The workshop is free with admission and begins at 11 AM every Thursday and Friday.">
+            <div class="news-meta"><span class="news-cat">Event</span><time datetime="2026-10-28">28 October 2026</time></div>
+            <h3>Sketch Ocean for children and families</h3>
+            <p>A drawing workshop where your sketches become creatures swimming in the digital ocean.</p>
+            <button class="card-link" type="button" data-news-toggle>Read more <span aria-hidden="true">→</span></button>
+          </article>
+          <article class="news-card reveal" data-cat="notice" data-full="In preparation for peak holiday attendance, the museum will stay open until 11 PM on Thursdays and Fridays, with entry slots every 30 minutes. Advance booking is recommended to confirm your time.">
+            <div class="news-meta"><span class="news-cat">Notice</span><time datetime="2026-10-20">20 October 2026</time></div>
+            <h3>Updated hours for the holiday season</h3>
+            <p>Entry slots every 30 minutes on weekends, with advance booking recommended.</p>
+            <button class="card-link" type="button" data-news-toggle>Read more <span aria-hidden="true">→</span></button>
+          </article>
+          <article class="news-card reveal" data-cat="event" data-full="In partnership with Culture Square, the museum hosts an artistic talk titled 'Art in Motion' discussing how movement becomes a digital painting. The talk is open to the public and reserved for ticket holders.">
+            <div class="news-meta"><span class="news-cat">Event</span><time datetime="2026-10-05">5 October 2026</time></div>
+            <h3>'Art in Motion' talk with Culture Square</h3>
+            <p>An artistic talk explaining how a visitor's movement becomes a changing visual scene.</p>
+            <button class="card-link" type="button" data-news-toggle>Read more <span aria-hidden="true">→</span></button>
+          </article>
+          <article class="news-card reveal" data-cat="notice" data-full="A standing reminder: Monday is reserved for routine maintenance and artwork development, and the museum does not receive visitors on that day. We apologise for any inconvenience and ask you to check the visit calendar before booking.">
+            <div class="news-meta"><span class="news-cat">Notice</span><time datetime="2026-09-22">22 September 2026</time></div>
+            <h3>Reminder: Monday is a maintenance day</h3>
+            <p>The museum closes every Monday for artwork development and system maintenance.</p>
+            <button class="card-link" type="button" data-news-toggle>Read more <span aria-hidden="true">→</span></button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Gallery ============ -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Photo gallery</span>
+          <h2 class="section-title">Moments from a world like no other</h2>
+          <p class="section-lead">A collection of scenes combining light, nature and technology, documenting the beauty of the experiences inside the museum. Click any image to enlarge it.</p>
+        </div>
+        <div class="gallery-grid">
+          <button class="gallery-item reveal media media--g1" type="button" data-img="assets/img/gallery-01.webp" data-caption="Light reflections in the Forest of Lamps" aria-label="View image: Light reflections in the Forest of Lamps">
+            <span class="media__placeholder"><span class="media__symbol">✦</span><strong>Image placeholder</strong><small>gallery-01.webp</small></span>
+          </button>
+          <button class="gallery-item reveal media media--g2" type="button" data-img="assets/img/gallery-02.webp" data-caption="A visitor interacting with a light sphere" aria-label="View image: A visitor interacting with a light sphere">
+            <span class="media__placeholder"><span class="media__symbol">✦</span><strong>Image placeholder</strong><small>gallery-02.webp</small></span>
+          </button>
+          <button class="gallery-item reveal media media--g3" type="button" data-img="assets/img/gallery-03.jpg" data-caption="Colours flowing across the floor" aria-label="View image: Colours flowing across the floor">
+            <span class="media__placeholder"><span class="media__symbol">✦</span><strong>Image placeholder</strong><small>gallery-03.jpg</small></span>
+          </button>
+          <button class="gallery-item reveal media media--g4" type="button" data-img="assets/img/gallery-04.avif" data-caption="A scene of light and shadow" aria-label="View image: A scene of light and shadow">
+            <span class="media__placeholder"><span class="media__symbol">✦</span><strong>Image placeholder</strong><small>gallery-04.avif</small></span>
+          </button>
+          <button class="gallery-item reveal media media--g5" type="button" data-img="assets/img/gallery-05.avif" data-caption="Drawings turning into sea creatures" aria-label="View image: Drawings turning into sea creatures">
+            <span class="media__placeholder"><span class="media__symbol">✦</span><strong>Image placeholder</strong><small>gallery-05.avif</small></span>
+          </button>
+          <button class="gallery-item reveal media media--g6" type="button" data-img="assets/img/gallery-06.avif" data-caption="A digital flower blooming inside the cup" aria-label="View image: A digital flower blooming inside the cup">
+            <span class="media__placeholder"><span class="media__symbol">✦</span><strong>Image placeholder</strong><small>gallery-06.avif</small></span>
+          </button>
+          <button class="gallery-item reveal media media--g7" type="button" data-img="assets/img/gallery-07.avif" data-caption="Sand and falling rose petals" aria-label="View image: Sand and falling rose petals">
+            <span class="media__placeholder"><span class="media__symbol">✦</span><strong>Image placeholder</strong><small>gallery-07.avif</small></span>
+          </button>
+          <button class="gallery-item reveal media media--g8" type="button" data-img="assets/img/gallery-08.avif" data-caption="The Factory — turning the fish you draw into an original product" aria-label="View image: The Factory">
+            <span class="media__placeholder"><span class="media__symbol">✦</span><strong>Image placeholder</strong><small>gallery-08.avif</small></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Visit Info (compact, after gallery) ============ -->
+    <section class="section" id="visit">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Visit information</span>
+          <h2 class="section-title">Where to find us? When are we open?</h2>
+        </div>
+        <div class="visit-grid">
+          <article class="visit-card reveal">
+            <span class="visit-icon" aria-hidden="true">⌖</span>
+            <h3>Location</h3>
+            <p>Culture Square, Historic Jeddah, Jeddah, Saudi Arabia.</p>
+            <a class="inline-link" href="https://www.google.com/maps/search/?api=1&query=Jeddah+Historic+District+Culture+Square" target="_blank" rel="noopener">Open in Google Maps →</a>
+          </article>
+          <article class="visit-card reveal">
+            <span class="visit-icon" aria-hidden="true">◷</span>
+            <h3>Days &amp; opening hours</h3>
+            <ul class="hours-list">
+              <li><span>Saturday – Wednesday</span><strong>10:00 AM – 10:00 PM</strong></li>
+              <li><span>Thursday &amp; Friday</span><strong>10:00 AM – 11:00 PM</strong></li>
+              <li class="closed"><span>Monday</span><strong>Closed (maintenance)</strong></li>
+            </ul>
+            <p class="visit-small">Last entry 60 minutes before closing.</p>
+          </article>
+          <article class="visit-card reveal">
+            <span class="visit-icon" aria-hidden="true">✺</span>
+            <h3>Holidays &amp; occasions</h3>
+            <ul class="holiday-list">
+              <li><strong>22 February</strong><span>Founding Day — special hours</span></li>
+              <li><strong>23 September</strong><span>National Day — special hours</span></li>
+              <li><strong>Eid al-Fitr &amp; Eid al-Adha</strong><span>Hours announced two days before Eid</span></li>
+            </ul>
+            <p class="visit-small">Hours may change on public holidays; follow the News section.</p>
+          </article>
+          <article class="visit-card reveal">
+            <span class="visit-icon" aria-hidden="true">✦</span>
+            <h3>Before you visit</h3>
+            <ul class="tips-list">
+              <li>Arrive 15 minutes before your slot.</li>
+              <li>Wear comfortable clothes for moving around.</li>
+              <li>Photography is allowed without flash.</li>
+              <li>Children under 3 enter free.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Contact ============ -->
+    <section class="section section--tint" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <span class="eyebrow">Contact us</span>
+          <h2 class="section-title">We're here to answer your questions</h2>
+          <p>Booking questions, private events, school visits or anything else — send us a message and we'll get back to you as soon as we can.</p>
+          <ul class="contact-list">
+            <li><span class="contact-icon" aria-hidden="true">⌖</span><span><strong>Address</strong><span>Culture Square, Historic Jeddah, Jeddah</span></span></li>
+            <li><span class="contact-icon" aria-hidden="true">✆</span><span><strong>Phone</strong><span dir="ltr">+966 12 000 0000</span></span></li>
+            <li><span class="contact-icon" aria-hidden="true">✉</span><span><strong>Email</strong><span dir="ltr">hello@teamlab-jeddah.example</span></span></li>
+          </ul>
+          <div class="social-block">
+            <strong>Follow us</strong>
+            <div class="social-links">
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">◎</a>
+              <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X" title="X">𝕏</a>
+              <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">♪</a>
+              <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">▶</a>
+              <a href="https://www.snapchat.com/" target="_blank" rel="noopener" aria-label="Snapchat" title="Snapchat">◐</a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">in</a>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="field"><label for="inq-name">Name</label><input id="inq-name" name="name" type="text" autocomplete="name" placeholder="Your name" required></div>
+            <div class="field"><label for="inq-email">Email</label><input id="inq-email" name="email" type="email" autocomplete="email" dir="ltr" placeholder="you@example.com" required></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="inq-phone">Mobile (optional)</label><input id="inq-phone" name="phone" type="tel" autocomplete="tel" dir="ltr" placeholder="05xxxxxxxx"></div>
+            <div class="field"><label for="inq-subject">Subject</label>
+              <select id="inq-subject" name="subject">
+                <option>Ticket inquiry</option>
+                <option>Group or private event booking</option>
+                <option>School visit</option>
+                <option>Question about the artworks</option>
+                <option>Something else</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label for="inq-message">Message</label><textarea id="inq-message" name="message" rows="5" placeholder="Write your message here..." required></textarea></div>
+          <p class="form-status" id="inq-status" role="status" aria-live="polite"></p>
+          <button class="btn btn--primary" type="submit">Send inquiry <span aria-hidden="true">→</span></button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ Closing ============ -->
+    <section class="closing" id="closing">
+      <div class="closing-glow" aria-hidden="true"></div>
+      <div class="container closing-inner reveal">
+        <span class="eyebrow">To close our journey</span>
+        <h2>Every discovery opens a door to a new world</h2>
+        <p>We discover that art needs no borders, and that technology can turn imagination into an experience we live with all our senses.</p>
+        <p class="closing-thanks">Thank you for visiting the world of teamLab Borderless. May your journey be full of inspiration and discovery!</p>
+        <button class="btn btn--primary" type="button" data-book-scroll>Book your journey now <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="#home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M24 24c-5-8-9-11-13-11C6 13 3 17 3 22s3 9 8 9c5 0 9-4 13-7 4 3 8 7 13 7 5 0 8-4 8-9s-3-9-8-9c-4 0-8 3-13 11Z"/></svg>
+          </span>
+          <span class="brand-text"><strong>teamLab Borderless</strong><small>Jeddah · Saudi Arabia</small></span>
+        </a>
+        <p>An interactive digital art museum in the heart of Historic Jeddah — a world where light, colour and movement intertwine without borders.</p>
+        <div class="social-links footer-social">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+          <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X">𝕏</a>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">♪</a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">▶</a>
+          <a href="https://www.snapchat.com/" target="_blank" rel="noopener" aria-label="Snapchat">◐</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#about">About</a>
+        <a href="#overview">Overview</a>
+        <a href="#worlds">Art worlds</a>
+        <a href="#artworks">Artworks</a>
+        <a href="#gallery">Photo gallery</a>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <a href="#tickets">Tickets &amp; booking</a>
+        <a href="#visit">Hours &amp; holidays</a>
+        <a href="#news">News &amp; announcements</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col footer-newsletter">
+        <h4>Newsletter</h4>
+        <p>Subscribe for the latest news and events.</p>
+        <form id="newsletter-form" novalidate>
+          <input type="email" name="email" placeholder="Your email" dir="ltr" aria-label="Newsletter email" required>
+          <button type="submit" aria-label="Subscribe">→</button>
+        </form>
+        <p class="newsletter-status" id="newsletter-status" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year">2026</span> teamLab Borderless - Jeddah. All rights reserved.</span>
+      <span>Made for a world without borders <span aria-hidden="true">∞</span></span>
+    </div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="Back to top">↑</button>
+  <div class="toast-wrap" id="toast-wrap" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ============ Dialogs ============ -->
+  <dialog class="modal detail-modal" id="detail-dialog" aria-labelledby="detail-title">
+    <div class="modal-shell">
+      <button class="modal-close" type="button" data-close-dialog aria-label="Close">×</button>
+      <div class="modal-media media" id="detail-media" role="img" aria-label="Artwork detail">
+        <div class="media__placeholder"><span class="media__symbol">✦</span><strong>Image placeholder</strong><small>Experience detail</small></div>
+      </div>
+      <div class="modal-body">
+        <span class="eyebrow" id="detail-eyebrow">Interactive experience</span>
+        <h2 id="detail-title"></h2>
+        <span class="en-name" id="detail-en" dir="ltr"></span>
+        <p id="detail-desc"></p>
+        <div class="detail-extra" id="detail-extra"></div>
+        <div class="detail-meta">
+          <span>Estimated duration</span>
+          <strong id="detail-duration"></strong>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn--primary" type="button" id="detail-book">Book this experience <span aria-hidden="true">→</span></button>
+          <button class="btn btn--ghost" type="button" data-close-dialog>Close</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal booking-confirm" id="booking-dialog" aria-labelledby="booking-dialog-title">
+    <div class="modal-shell modal-shell--center">
+      <button class="modal-close" type="button" data-close-dialog aria-label="Close">×</button>
+      <div class="success-mark" aria-hidden="true">✓</div>
+      <span class="eyebrow">Booking confirmed</span>
+      <h2 id="booking-dialog-title">Your journey starts here</h2>
+      <p>Keep the reference number below and show it at the entrance.</p>
+      <div class="booking-ref" id="booking-ref">TLB-0000</div>
+      <div class="booking-details" id="booking-details"></div>
+      <p class="modal-note">This is a demo confirmation saved on this device only. No email will be sent.</p>
+      <div class="modal-actions modal-actions--center">
+        <button class="btn btn--primary" type="button" data-close-dialog>OK</button>
+        <button class="btn btn--ghost" type="button" id="show-bookings-after">View my bookings</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal bookings-modal" id="bookings-dialog" aria-labelledby="bookings-title">
+    <div class="modal-shell">
+      <button class="modal-close" type="button" data-close-dialog aria-label="Close">×</button>
+      <span class="eyebrow">Your bookings</span>
+      <h2 id="bookings-title">My bookings</h2>
+      <div id="bookings-list" class="bookings-list"></div>
+      <div class="modal-actions"><button class="btn btn--ghost" type="button" data-close-dialog>Close</button></div>
+    </div>
+  </dialog>
+
+  <dialog class="modal gallery-modal" id="gallery-dialog" aria-label="Image viewer">
+    <div class="gallery-modal-inner">
+      <button class="modal-close" type="button" data-close-dialog aria-label="Close">×</button>
+      <div class="media gallery-modal-media" id="gallery-modal-media" role="img" aria-label="Enlarged image">
+        <div class="media__placeholder"><span class="media__symbol">✦</span><strong>Image placeholder</strong><small>Gallery image</small></div>
+      </div>
+      <div class="gallery-modal-bar">
+        <button type="button" id="gallery-prev" aria-label="Previous image">←</button>
+        <span id="gallery-caption"></span>
+        <span class="gallery-count" id="gallery-count"></span>
+        <button type="button" id="gallery-next" aria-label="Next image">→</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="assets/js/main.js?v=4"></script>
+</body>
+</html>

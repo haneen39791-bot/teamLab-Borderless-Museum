@@ -1,31 +1,124 @@
 /* =========================================================
    teamLab Borderless Jeddah — Interactions
-   كل الأسعار والمواعيد أدناه قابلة للتعديل بسهولة.
+   الأسعار والمواعيد أدناه أمثلة قابلة للتعديل بسهولة.
+   Prices and times below are editable examples.
    ========================================================= */
 
 (function () {
   'use strict';
 
+  const LANG = document.documentElement.lang === 'en' ? 'en' : 'ar';
+
+  const I18N = {
+    ar: {
+      currency: 'ر.س',
+      menuOpen: 'فتح القائمة',
+      menuClose: 'إغلاق القائمة',
+      tickets: {
+        general: 'تذكرة عامة', child: 'تذكرة طفل',
+        family: 'تذكرة العائلة', vip: 'تجربة كبار الزوار'
+      },
+      holidays: {
+        '02-22': 'يوم التأسيس — قد تختلف ساعات العمل اليوم.',
+        '09-23': 'اليوم الوطني — قد تختلف ساعات العمل اليوم.'
+      },
+      dateHintClosed: 'الإثنين يوم إغلاق أسبوعي — اختر يوماً آخر.',
+      bookingMonday: 'لا يمكن الحجز يوم الإثنين.',
+      noDate: 'اختر تاريخ زيارة غير يوم الإثنين.',
+      pastDate: 'لا يمكن الحجز لتاريخ ماضٍ.',
+      noTime: 'اختر وقت الدخول.',
+      needName: 'اكتب اسمك الكامل.',
+      needPhone: 'أدخل رقم جوال سعودي صحيح.',
+      toastTicket: 'تم اختيار: ',
+      toastBooking: 'تم إنشاء الحجز ',
+      toastCancel: 'تم إلغاء الحجز',
+      labelName: 'الاسم', labelTicket: 'التذكرة', labelDate: 'التاريخ',
+      labelTime: 'الوقت', labelQty: 'عدد التذاكر', labelTotal: 'الإجمالي',
+      emptyBookings: 'لا توجد حجوزات محفوظة على هذا الجهاز بعد.',
+      ticketUnit: 'تذكرة', cancel: 'إلغاء',
+      readMore: 'اقرأ المزيد ', readLess: 'اقرأ أقل ',
+      inqName: 'يرجى كتابة اسمك.',
+      inqEmail: 'يرجى إدخال بريد إلكتروني صحيح.',
+      inqMessage: 'يرجى كتابة رسالة أوضح (10 أحرف على الأقل).',
+      inqSaved: 'تم استلام استفسارك وحفظه على هذا الجهاز. شكراً لك!',
+      inqSavedNoLs: 'تم استلام استفسارك. شكراً لك!',
+      toastInq: 'تم إرسال الاستفسار بنجاح',
+      newsInvalid: 'بريد غير صحيح',
+      newsInvalidToast: 'أدخل بريداً إلكترونياً صحيحاً',
+      newsOk: 'تم الاشتراك ✓',
+      newsOkToast: 'شكراً لاشتراكك في النشرة',
+      am: ' ص', pm: ' م', locale: 'ar-SA-u-ca-gregory'
+    },
+    en: {
+      currency: 'SAR',
+      menuOpen: 'Open menu',
+      menuClose: 'Close menu',
+      tickets: {
+        general: 'General Admission', child: 'Child Ticket',
+        family: 'Family Ticket', vip: 'VIP Experience'
+      },
+      holidays: {
+        '02-22': 'Founding Day — opening hours may vary today.',
+        '09-23': 'National Day — opening hours may vary today.'
+      },
+      dateHintClosed: 'Monday is our weekly closing day — please choose another day.',
+      bookingMonday: 'Booking is not available on Mondays.',
+      noDate: 'Choose a visit date other than Monday.',
+      pastDate: 'Cannot book a date in the past.',
+      noTime: 'Choose an entry time.',
+      needName: 'Please enter your full name.',
+      needPhone: 'Enter a valid Saudi mobile number.',
+      toastTicket: 'Selected: ',
+      toastBooking: 'Booking created: ',
+      toastCancel: 'Booking cancelled',
+      labelName: 'Name', labelTicket: 'Ticket', labelDate: 'Date',
+      labelTime: 'Time', labelQty: 'Tickets', labelTotal: 'Total',
+      emptyBookings: 'No bookings saved on this device yet.',
+      ticketUnit: 'ticket(s)', cancel: 'Cancel',
+      readMore: 'Read more ', readLess: 'Read less ',
+      inqName: 'Please enter your name.',
+      inqEmail: 'Please enter a valid email address.',
+      inqMessage: 'Please write a clearer message (at least 10 characters).',
+      inqSaved: 'Your inquiry was received and saved on this device. Thank you!',
+      inqSavedNoLs: 'Your inquiry was received. Thank you!',
+      toastInq: 'Inquiry sent successfully',
+      newsInvalid: 'Invalid email',
+      newsInvalidToast: 'Enter a valid email address',
+      newsOk: 'Subscribed ✓',
+      newsOkToast: 'Thank you for subscribing',
+      am: ' AM', pm: ' PM', locale: 'en-GB'
+    }
+  };
+
+  const dict = I18N[LANG];
+  const t = (key) => dict[key];
+
   const TICKETS = {
-    general: { name: 'تذكرة عامة', price: 120 },
-    child:   { name: 'تذكرة طفل', price: 80 },
-    family:  { name: 'تذكرة العائلة', price: 350 },
-    vip:     { name: 'تجربة كبار الزوار', price: 250 }
+    general: { name: dict.tickets.general, price: 120 },
+    child:   { name: dict.tickets.child,   price: 80 },
+    family:  { name: dict.tickets.family,  price: 350 },
+    vip:     { name: dict.tickets.vip,     price: 250 }
   };
-  const HOLIDAYS = {
-    '02-22': 'يوم التأسيس — قد تختلف ساعات العمل اليوم.',
-    '09-23': 'اليوم الوطني — قد تختلف ساعات العمل اليوم.'
-  };
+  const HOLIDAYS = dict.holidays;
   const LS_BOOKINGS = 'teamlab_bookings';
   const LS_INQUIRIES = 'teamlab_inquiries';
 
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
-  const money = (n) => n.toLocaleString('en-US') + ' ر.س';
+  const money = (n) => n.toLocaleString('en-US') + ' ' + dict.currency;
+
+  function timeLabel(h, m) {
+    if (LANG === 'ar') return h + ':' + m + (+h >= 12 ? ' م' : ' ص');
+    let hour = +h;
+    const suffix = hour >= 12 ? ' PM' : ' AM';
+    hour = hour % 12 || 12;
+    return String(hour).padStart(2, '0') + ':' + m + suffix;
+  }
 
   /* ---------------- Toast ---------------- */
   function toast(message, type) {
     const wrap = $('#toast-wrap');
+    if (!wrap) return;
     const el = document.createElement('div');
     el.className = 'toast' + (type === 'error' ? ' is-error' : '');
     el.textContent = message;
@@ -45,7 +138,7 @@
     el.dataset.img = src;
     const test = new Image();
     test.onload = function () {
-      // مسار مطلق حتى لا يُحلّ الرابط نسبياً مقابل ملف CSS
+      // absolute URL so it is not resolved relative to the CSS file
       const absolute = new URL(src, document.baseURI).href;
       el.style.setProperty('--img', 'url("' + absolute + '")');
       el.classList.add('has-image');
@@ -81,13 +174,13 @@
   function closeMenu() {
     nav.classList.remove('is-open');
     menuToggle.setAttribute('aria-expanded', 'false');
-    menuToggle.setAttribute('aria-label', 'فتح القائمة');
+    menuToggle.setAttribute('aria-label', dict.menuOpen);
     document.body.classList.remove('menu-open');
   }
   menuToggle.addEventListener('click', () => {
     const open = nav.classList.toggle('is-open');
     menuToggle.setAttribute('aria-expanded', String(open));
-    menuToggle.setAttribute('aria-label', open ? 'إغلاق القائمة' : 'فتح القائمة');
+    menuToggle.setAttribute('aria-label', open ? dict.menuClose : dict.menuOpen);
     document.body.classList.toggle('menu-open', open);
   });
   $$('.nav a').forEach((a) => a.addEventListener('click', closeMenu));
@@ -172,7 +265,7 @@
     const d = parseDate(value);
     if (!d) return value;
     try {
-      return new Intl.DateTimeFormat('ar-SA-u-ca-gregory', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(d);
+      return new Intl.DateTimeFormat(dict.locale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(d);
     } catch (e) {
       return d.toLocaleDateString();
     }
@@ -191,14 +284,14 @@
       timeSelect.appendChild(opt);
       return;
     }
-    // آخر دخول قبل الإغلاق بساعة: 21:00 في الأيام العادية، 22:00 الخميس والجمعة
+    // last entry one hour before closing: 21:00 regular, 22:00 Thu/Fri
     const lastHour = (d.getDay() === 4 || d.getDay() === 5) ? 22 : 21;
     for (let minutes = 10 * 60; minutes <= lastHour * 60; minutes += 30) {
       const h = String(Math.floor(minutes / 60)).padStart(2, '0');
       const m = String(minutes % 60).padStart(2, '0');
       const opt = document.createElement('option');
       opt.value = h + ':' + m;
-      opt.textContent = h + ':' + m + (h >= '12' ? ' م' : ' ص');
+      opt.textContent = timeLabel(h, m);
       timeSelect.appendChild(opt);
     }
   }
@@ -213,7 +306,7 @@
     updateTotal();
     if (scroll !== false) {
       $('#booking-panel').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      toast('تم اختيار: ' + TICKETS[id].name);
+      toast(t('toastTicket') + TICKETS[id].name);
     }
   }
   $$('[data-select-ticket]').forEach((btn) => btn.addEventListener('click', () => setTicket(btn.dataset.selectTicket, true)));
@@ -236,9 +329,9 @@
   function handleDateChange() {
     const value = dateInput.value;
     if (isMonday(value)) {
-      dateHint.textContent = 'الإثنين يوم إغلاق أسبوعي — اختر يوماً آخر.';
+      dateHint.textContent = t('dateHintClosed');
       dateHint.classList.add('is-warning');
-      bookingMessage.textContent = 'لا يمكن الحجز يوم الإثنين.';
+      bookingMessage.textContent = t('bookingMonday');
       dateInput.value = '';
       buildSlots('');
       updateTotal();
@@ -249,7 +342,7 @@
       dateHint.textContent = HOLIDAYS[md];
       dateHint.classList.add('is-warning');
     } else {
-      dateHint.textContent = 'الإثنين يوم إغلاق أسبوعي — اختر يوماً آخر.';
+      dateHint.textContent = t('dateHintClosed');
       dateHint.classList.remove('is-warning');
     }
     bookingMessage.textContent = '';
@@ -276,11 +369,11 @@
     const ticket = TICKETS[ticketSelect.value] || TICKETS.general;
     const qty = parseInt(qtyInput.value, 10) || 1;
 
-    if (!dateInput.value) { bookingMessage.textContent = 'اختر تاريخ زيارة غير يوم الإثنين.'; dateInput.focus(); return; }
-    if (dateInput.value < isoDate(new Date())) { bookingMessage.textContent = 'لا يمكن الحجز لتاريخ ماضٍ.'; dateInput.focus(); return; }
-    if (!timeSelect.value) { bookingMessage.textContent = 'اختر وقت الدخول.'; timeSelect.focus(); return; }
-    if (name.length < 2) { bookingMessage.textContent = 'اكتب اسمك الكامل.'; $('#book-name').focus(); return; }
-    if (!/^(?:\+966|0)?5\d{8}$/.test(phone)) { bookingMessage.textContent = 'أدخل رقم جوال سعودي صحيح.'; $('#book-phone').focus(); return; }
+    if (!dateInput.value) { bookingMessage.textContent = t('noDate'); dateInput.focus(); return; }
+    if (dateInput.value < isoDate(new Date())) { bookingMessage.textContent = t('pastDate'); dateInput.focus(); return; }
+    if (!timeSelect.value) { bookingMessage.textContent = t('noTime'); timeSelect.focus(); return; }
+    if (name.length < 2) { bookingMessage.textContent = t('needName'); $('#book-name').focus(); return; }
+    if (!/^(?:\+966|0)?5\d{8}$/.test(phone)) { bookingMessage.textContent = t('needPhone'); $('#book-phone').focus(); return; }
 
     const booking = {
       ref: 'TLB-' + new Date().getFullYear() + '-' + Math.random().toString(36).slice(2, 6).toUpperCase(),
@@ -300,17 +393,17 @@
 
     $('#booking-ref').textContent = booking.ref;
     $('#booking-details').innerHTML = [
-      ['الاسم', booking.name],
-      ['التذكرة', booking.ticketName],
-      ['التاريخ', readableDate(booking.date)],
-      ['الوقت', booking.time],
-      ['عدد التذاكر', String(booking.qty)],
-      ['الإجمالي', money(booking.total)]
+      [t('labelName'), booking.name],
+      [t('labelTicket'), booking.ticketName],
+      [t('labelDate'), readableDate(booking.date)],
+      [t('labelTime'), booking.time],
+      [t('labelQty'), String(booking.qty)],
+      [t('labelTotal'), money(booking.total)]
     ].map((row) => '<div><span>' + row[0] + '</span><strong>' + row[1] + '</strong></div>').join('');
     bookingMessage.textContent = '';
     closeAllDialogsExcept(bookingDialog);
     bookingDialog.showModal();
-    toast('تم إنشاء الحجز ' + booking.ref);
+    toast(t('toastBooking') + booking.ref);
     $('#book-name').value = '';
     $('#book-phone').value = '';
     qtyInput.value = 1;
@@ -321,14 +414,14 @@
     const list = readBookings();
     const container = $('#bookings-list');
     if (!list.length) {
-      container.innerHTML = '<p class="empty-state">لا توجد حجوزات محفوظة على هذا الجهاز بعد.</p>';
+      container.innerHTML = '<p class="empty-state">' + t('emptyBookings') + '</p>';
       return;
     }
     container.innerHTML = list.map((b, i) =>
       '<div class="booking-row">' +
-        '<div><strong>' + b.ref + '</strong><p>' + (b.ticketName || TICKETS[b.ticket].name) + ' · ' + b.qty + ' تذكرة · ' + money(b.total || 0) + '</p>' +
+        '<div><strong>' + b.ref + '</strong><p>' + (b.ticketName || TICKETS[b.ticket].name) + ' · ' + b.qty + ' ' + t('ticketUnit') + ' · ' + money(b.total || 0) + '</p>' +
         '<p>' + readableDate(b.date) + ' — ' + b.time + '</p></div>' +
-        '<button type="button" data-cancel-booking="' + i + '">إلغاء</button>' +
+        '<button type="button" data-cancel-booking="' + i + '">' + t('cancel') + '</button>' +
       '</div>'
     ).join('');
     $$('[data-cancel-booking]', container).forEach((btn) => btn.addEventListener('click', () => {
@@ -336,7 +429,7 @@
       current.splice(Number(btn.dataset.cancelBooking), 1);
       writeBookings(current);
       renderBookings();
-      toast('تم إلغاء الحجز');
+      toast(t('toastCancel'));
     }));
   }
   function openBookings() {
@@ -358,7 +451,7 @@
       card.insertBefore(el, button);
     }
     const expanded = card.classList.toggle('is-expanded');
-    button.innerHTML = (expanded ? 'اقرأ أقل ' : 'اقرأ المزيد ') + '<span aria-hidden="true">' + (expanded ? '↑' : '←') + '</span>';
+    button.innerHTML = (expanded ? t('readLess') : t('readMore')) + '<span aria-hidden="true">' + (expanded ? '↑' : '←') + '</span>';
   }));
   $$('[data-news-filter]').forEach((button) => button.addEventListener('click', () => {
     $$('[data-news-filter]').forEach((b) => {
@@ -407,18 +500,18 @@
     const name = $('#inq-name').value.trim();
     const email = $('#inq-email').value.trim();
     const message = $('#inq-message').value.trim();
-    if (name.length < 2) { inquiryStatus.textContent = 'يرجى كتابة اسمك.'; inquiryStatus.classList.add('is-error'); return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { inquiryStatus.textContent = 'يرجى إدخال بريد إلكتروني صحيح.'; inquiryStatus.classList.add('is-error'); return; }
-    if (message.length < 10) { inquiryStatus.textContent = 'يرجى كتابة رسالة أوضح (10 أحرف على الأقل).'; inquiryStatus.classList.add('is-error'); return; }
+    if (name.length < 2) { inquiryStatus.textContent = t('inqName'); inquiryStatus.classList.add('is-error'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { inquiryStatus.textContent = t('inqEmail'); inquiryStatus.classList.add('is-error'); return; }
+    if (message.length < 10) { inquiryStatus.textContent = t('inqMessage'); inquiryStatus.classList.add('is-error'); return; }
     let saved = false;
     try {
       const list = JSON.parse(localStorage.getItem(LS_INQUIRIES) || '[]');
       list.unshift({ name, email, phone: $('#inq-phone').value.trim(), subject: $('#inq-subject').value, message, created: new Date().toISOString() });
       localStorage.setItem(LS_INQUIRIES, JSON.stringify(list));
       saved = true;
-    } catch (err) { /* التخزين غير متاح */ }
-    inquiryStatus.textContent = saved ? 'تم استلام استفسارك وحفظه على هذا الجهاز. شكراً لك!' : 'تم استلام استفسارك. شكراً لك!';
-    toast('تم إرسال الاستفسار بنجاح');
+    } catch (err) { /* storage not available */ }
+    inquiryStatus.textContent = saved ? t('inqSaved') : t('inqSavedNoLs');
+    toast(t('toastInq'));
     inquiryForm.reset();
   });
 
@@ -429,13 +522,13 @@
     const status = $('#newsletter-status');
     const email = input.value.trim();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      status.textContent = 'بريد غير صحيح';
-      toast('أدخل بريداً إلكترونياً صحيحاً', 'error');
+      status.textContent = t('newsInvalid');
+      toast(t('newsInvalidToast'), 'error');
       return;
     }
-    status.textContent = 'تم الاشتراك ✓';
+    status.textContent = t('newsOk');
     input.value = '';
-    toast('شكراً لاشتراكك في النشرة');
+    toast(t('newsOkToast'));
   });
 
   /* ---------------- Hero light canvas ---------------- */
@@ -445,7 +538,8 @@
     const ctx = canvas.getContext('2d');
     const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let width = 0, height = 0, particles = [], raf = null;
-    const colors = ['34,211,238', '139,92,246', '236,72,153', '251,191,36'];
+    // Navy / teal / gold particle palette matching the site theme
+    const colors = ['45,212,191', '20,184,166', '251,191,36', '94,234,212'];
 
     function resize() {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -487,7 +581,7 @@
         ctx.fill();
       }
       ctx.globalCompositeOperation = 'source-over';
-      ctx.strokeStyle = 'rgba(160,180,255,.07)';
+      ctx.strokeStyle = 'rgba(94,234,212,.07)';
       ctx.lineWidth = 1;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
