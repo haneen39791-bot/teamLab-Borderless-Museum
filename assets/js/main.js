@@ -223,9 +223,12 @@
 
   /* ---------------- Detail dialog (worlds & artworks) ---------------- */
   const detailDialog = $('#detail-dialog');
+  const detailOverview = $('#detail-overview');
   $$('[data-detail]').forEach((button) => button.addEventListener('click', () => {
     const card = button.closest('[data-title]');
     if (!card) return;
+    // The overview belongs to the Worlds section, so show it there only
+    if (detailOverview) detailOverview.hidden = !card.closest('#worlds');
     $('#detail-title').textContent = card.dataset.title || '';
     $('#detail-en').textContent = card.dataset.en || '';
     $('#detail-desc').textContent = card.dataset.desc || '';
