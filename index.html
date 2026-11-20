@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="تيم لاب بلا حدود - جدة: متحف الفن الرقمي التفاعلي في ميدان الثقافة بجدة التاريخية. اكتشف العوالم، احجز تذكرتك، وتعرّف على المواعيد والأخبار.">
+  <meta name="theme-color" content="#06070d">
+  <title>تيم لاب بلا حدود | جدة - المملكة العربية السعودية</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+
+  <!-- ============ Header ============ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="تيم لاب بلا حدود - الصفحة الرئيسية">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4">
+            <path d="M24 24c-5-8-9-11-13-11C6 13 3 17 3 22s3 9 8 9c5 0 9-4 13-7 4 3 8 7 13 7 5 0 8-4 8-9s-3-9-8-9c-4 0-8 3-13 11Z"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>تيم لاب بلا حدود</strong>
+          <small>teamLab Borderless · Jeddah</small>
+        </span>
+      </a>
+
+      <nav class="nav" id="primary-nav" aria-label="القائمة الرئيسية">
+        <a href="#home">الرئيسية</a>
+        <a href="#about">عن المتحف</a>
+        <a href="#worlds">العوالم</a>
+        <a href="#artworks">الأعمال</a>
+        <a href="#tickets">التذاكر</a>
+        <a href="#news">الأخبار</a>
+        <a href="#visit">الزيارة</a>
+        <a href="#contact">استفسارات</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn--small btn--primary" type="button" data-book-scroll>احجز تذكرتك</button>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="primary-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ Hero ============ -->
+    <section class="hero" id="home">
+      <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow"><span class="eyebrow-dot"></span> teamLab Borderless · جدة التاريخية</span>
+          <h1 class="hero-title">
+            تيم لاب بلا حدود
+            <span class="accent-text">اكتشف عالمًا يتجاوز الخيال</span>
+          </h1>
+          <p class="hero-lead">ماذا لو أصبح الفن عالمًا يمكنك الدخول إليه ولمسه والتفاعل معه؟</p>
+          <p class="hero-text">في تيم لاب بلا حدود، تتحول الأضواء والألوان والحركة إلى تجارب فنية استثنائية، حيث تتداخل الأعمال الفنية وتتغير باستمرار، لتمنحك فرصة اكتشاف عالم لا تحدّه الجدران ولا تنتهي فيه المفاجآت.</p>
+          <div class="hero-actions">
+            <button class="btn btn--primary" type="button" data-book-scroll>ابدأ رحلتك <span aria-hidden="true">←</span></button>
+            <a class="btn btn--ghost" href="#worlds">استكشف العوالم</a>
+            <a class="btn btn--text" href="#artworks">اكتشف التجارب <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><strong>10,000</strong><span>متر مربع من العجائب</span></div>
+            <div class="stat"><strong>80+</strong><span>عملاً فنياً تفاعلياً</span></div>
+            <div class="stat"><strong>5</strong><span>عوالم مترابطة</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="صورة توضيحية للمتحف">
+          <div class="hero-frame media media--hero" data-img="assets/img/hero-teamlab.jpg" role="img" aria-label="واجهة متحف تيم لاب بلا حدود">
+            <div class="media__placeholder">
+              <span class="media__symbol">✦</span>
+              <strong>مساحة للصورة</strong>
+              <small>assets/img/hero-teamlab.jpg</small>
+            </div>
+          </div>
+          <div class="hero-float hero-float--one">
+            <span class="hero-float__num">01</span>
+            <span>ضوء</span>
+          </div>
+          <div class="hero-float hero-float--two">
+            <span class="hero-float__num">02</span>
+            <span>حركة</span>
+          </div>
+          <div class="hero-float hero-float--three">
+            <span class="hero-float__num">03</span>
+            <span>خيال</span>
+          </div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="انتقل إلى القسم التالي"><span></span></a>
+    </section>
+
+    <!-- ============ About ============ -->
+    <section class="section section--tint" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">عن المتحف</span>
+          <h2 class="section-title">ما هو تيم لاب بلا حدود؟</h2>
+          <p class="section-lead">متحف للفن الرقمي التفاعلي، يجمع بين الفن والتكنولوجيا والإبداع في تجربة غامرة.</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-media reveal">
+            <div class="media media--about" data-img="assets/img/about-museum.jpg" role="img" aria-label="صورة من داخل المتحف">
+              <div class="media__placeholder">
+                <span class="media__symbol">✦</span>
+                <strong>مساحة للصورة</strong>
+                <small>assets/img/about-museum.jpg</small>
+              </div>
+            </div>
+            <div class="about-badge">
+              <strong>الأول</strong>
+              <span>متحف دائم من نوعه<br>في الشرق الأوسط</span>
+            </div>
+          </div>
+          <div class="about-copy reveal">
+            <p>يقع المتحف في <strong>ميدان الثقافة بقلب جدة التاريخية</strong>، ويُعد أول متحف دائم من نوعه في الشرق الأوسط. يمتد على مساحة تقارب <strong>10,000 متر مربع</strong>، ويضم أكثر من <strong>80 عملاً فنياً</strong> تتفاعل مع بعضها ومع الزوار.</p>
+            <div class="quote-card">
+              <span class="quote-mark" aria-hidden="true">“</span>
+              <p>الفن ليس مجرد لوحة نشاهدها، بل تجربة نعيشها ونشارك فيها؛ فكل حركة واكتشاف قد يقودان إلى مشهد فني جديد.</p>
+            </div>
+            <h3 class="mini-title">فكرة المتحف</h3>
+            <p>هنا تتحرك الأعمال وتتغير أمام عينيك، وتنتقل من مساحة إلى أخرى دون مسار محدد. أنت لست متفرجاً؛ حضورك وحركتك جزء من العمل الفني نفسه.</p>
+            <div class="about-chips">
+              <span>فن رقمي</span><span>إضاءة غامرة</span><span>تفاعل حركي</span><span>إبداع مشترك</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Worlds ============ -->
+    <section class="section" id="worlds">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">استكشف العوالم الفنية</span>
+          <h2 class="section-title">خمسة عوالم... لا حدود للاكتشاف</h2>
+          <p class="section-lead">كل عالم تجربة قائمة بذاتها، ومع ذلك تتداخل الأعمال وتنتقل بين المساحات لتصنع رحلة لا تتكرر.</p>
+        </div>
+
+        <div class="world-grid">
+          <article class="world-card reveal" data-title="غابة الألعاب الحركية" data-en="Athletics Forest" data-desc="عالم ثلاثي الأبعاد مليء بالتجارب الحركية والتحديات الإبداعية، حيث يستكشف الزوار المساحات من خلال الحركة والتفاعل مع البيئة الرقمية." data-extra="ارتدِ ملابس مريحة؛ فستحتاج إلى القفز والتسلق والتحرك بحرية بين المنصات والجدران التفاعلية." data-duration="نحو 25 دقيقة">
+            <div class="media media--world-1" data-img="assets/img/Athletics-Forest.jpe" role="img" aria-label="غابة الألعاب الحركية">
+              <div class="media__placeholder"><span class="media__symbol">✦</span><strong>مساحة للصورة</strong><small>Athletics-Forest.jpe</small></div>
+            </div>
+            <div class="world-card__body">
+              <span class="badge">تجربة حركية</span>
+              <h3>غابة الألعاب الحركية</h3>
+              <span class="en-name" dir="ltr">Athletics Forest</span>
+              <p>عالم ثلاثي الأبعاد مليء بالتجارب الحركية والتحديات الإبداعية، حيث يستكشف الزوار المساحات من خلال الحركة والتفاعل مع البيئة الرقمية.</p>
+              <button class="card-link" type="button" data-detail>اكتشف المزيد <span aria-hidden="true">←</span></button>
+            </div>
+          </article>
+
+          <article class="world-card reveal" data-title="حديقة المستقبل" data-en="Future Park" data-desc="مساحة إبداعية تشجع على المشاركة والتعاون، حيث يساهم الزوار في بناء عالم فني مشترك من خلال أفكارهم وتفاعلاتهم." data-extra="رسوماتك تظهر مباشرة على الجدران والأرضيات؛ تعاون مع الآخرين لرؤية عالمكم يتغير أمامكم." data-duration="نحو 20 دقيقة">
+            <div class="media media--world-2" data-img="assets/img/Future-Park.jpe" role="img" aria-label="حديقة المستقبل">
+              <div class="media__placeholder"><span class="media__symbol">✦</span><strong>مساحة للصورة</strong><small>Future-Park.jpe</small></div>
+            </div>
+            <div class="world-card__body">
+              <span class="badge">إبداع مشترك</span>
+              <h3>حديقة المستقبل</h3>
+              <span class="en-name" dir="ltr">Future Park</span>
+              <p>مساحة إبداعية تشجع على المشاركة والتعاون، حيث يساهم الزوار في بناء عالم فني مشترك من خلال أفكارهم وتفاعلاتهم.</p>
+              <button class="card-link" type="button" data-detail>اكتشف المزيد <span aria-hidden="true">←</span></button>
+            </div>
+          </article>
+
+          <article class="world-card reveal" data-title="غابة المصابيح" data-en="Forest of Lamps" data-desc="تجربة بصرية تتداخل فيها المصابيح والألوان والانعكاسات، لتصنع عالمًا من الضوء يبدو وكأنه يمتد بلا نهاية." data-extra="أطفئ وميض الكاميرا واترك عينيك تتكيف مع الظلمة لتكتشف طبقات الضوء والانعكاسات اللانهائية." data-duration="نحو 15 دقيقة">
+            <div class="media media--world-3" data-img="assets/img/Forest-of-Lamps.jpe" role="img" aria-label="غابة المصابيح">
+              <div class="media__placeholder"><span class="media__symbol">✦</span><strong>مساحة للصورة</strong><small>Forest-of-Lamps.jpe</small></div>
+            </div>
+            <div class="world-card__body">
+              <span class="badge">ضوء وانعكاس</span>
+              <h3>غابة المصابيح</h3>
+              <span class="en-name" dir="ltr">Forest of Lamps</span>
+              <p>تجربة بصرية تتداخل فيها المصابيح والألوان والانعكاسات، لتصنع عالمًا من الضوء يبدو وكأنه يمتد بلا نهاية.</p>
+              <button class="card-link" type="button" data-detail>اكتشف المزيد <span aria-hidden="true">←</span></button>
+            </div>
+          </article>
+
+          <article class="world-card reveal" data-title="محيط الرسومات" data-en="Sketch Ocean" data-desc="تجربة فنية تتيح للزوار المشاركة في إنشاء عالم بحري رقمي، حيث تتحول الرسومات إلى كائنات داخل المحيط الافتراضي." data-extra="ارسم كائناً على الورقة المخصصة، ثم شاهده يسبح داخل المحيط الرقمي مع رسومات الزوار الآخرين." data-duration="نحو 20 دقيقة">
+            <div class="media media--world-4" data-img="assets/img/Sketch-Ocean.jpe" role="img" aria-label="محيط الرسومات">
+              <div class="media__placeholder"><span class="media__symbol">✦</span><strong>مساحة للصورة</strong><small>Sketch-Ocean.jpe</small></div>
+            </div>
+            <div class="world-card__body">
+              <span class="badge">رسم رقمي</span>
+              <h3>محيط الرسومات</h3>
+              <span class="en-name" dir="ltr">Sketch Ocean</span>
+              <p>تجربة فنية تتيح للزوار المشاركة في إنشاء عالم بحري رقمي، حيث تتحول الرسومات إلى كائنات داخل المحيط الافتراضي.</p>
+              <button class="card-link" type="button" data-detail>اكتشف المزيد <span aria-hidden="true">←</span></button>
+            </div>
+          </article>
+
+          <article class="world-card reveal" data-title="بيت الشاي" data-en="EN TEA HOUSE" data-desc="تجربة تجمع بين الشاي والفن الرقمي، حيث تظهر الأزهار الرقمية وتتفتح داخل الكوب عند صب الشاي، وتستمر في التفتح ما دام الشاي موجوداً فيه." data-extra="اجلس، واطلب كوب شاي، وراقب الأزهار الرقمية تتفتح وتتغير مع كل رشفة. التجربة مخصصة لضيوف المتحف." data-duration="نحو 15 دقيقة">
+            <div class="media media--world-5" data-img="assets/img/EN-TEA-HOUSE.jpe" role="img" aria-label="بيت الشاي">
+              <div class="media__placeholder"><span class="media__symbol">✦</span><strong>مساحة للصورة</strong><small>EN-TEA-HOUSE.jpe</small></div>
+            </div>
+            <div class="world-card__body">
+              <span class="badge">ذوق وخيال</span>
+              <h3>بيت الشاي</h3>
+              <span class="en-name" dir="ltr">EN TEA HOUSE</span>
+              <p>تجربة تجمع بين الشاي والفن الرقمي، حيث تظهر الأزهار الرقمية وتتفتح داخل الكوب عند صب الشاي، وتستمر في التفتح ما دام الشاي موجوداً فيه.</p>
+              <button class="card-link" type="button" data-detail>اكتشف المزيد <span aria-hidden="true">←</span></button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Artworks ============ -->
+    <section class="section section--tint" id="artworks">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">أعمال فنية تستحق الاكتشاف</span>
+          <h2 class="section-title">أعمال تفاعلية لا تُنسى</h2>
+          <p class="section-lead">أعمال تتغير بلمستك وحركتك، وتصنع لحظة مختلفة في كل مرة تقترب فيها منها.</p>
+        </div>
+        <div class="art-grid">
+          <article class="art-card reveal" data-title="لمسة تُغيّر المشهد" data-en="Untitled" data-desc="تتفاعل المجسمات المعلّقة مع لمساتك، فتتدفق الألوان وتمتد النغمات في المكان، ويتجدد المشهد أمامك في كل لحظة." data-extra="كل لمسة تُعيد تشكيل اللون والصوت؛ جرّب اللمس الجماعي مع أصدقائك لرؤية العمل يتطور بطريقة مختلفة." data-duration="تجربة تفاعلية مفتوحة">
+            <div class="media media--art-1" data-img="assets/img/Untitled.jpe" role="img" aria-label="عمل Untitled">
+              <div class="media__placeholder"><span class="media__symbol">✦</span><strong>مساحة للصورة</strong><small>Untitled.jpe</small></div>
+            </div>
+            <div class="art-card__body">
+              <div class="art-card__top"><span class="badge">لمس وضوء</span><span class="art-index">01</span></div>
+              <h3>لمسة تُغيّر المشهد</h3>
+              <span class="en-name" dir="ltr">Untitled</span>
+              <div class="art-explain"><span>كيف تعمل التجربة؟</span><p>تتفاعل المجسمات المعلّقة مع لمساتك، فتتدفق الألوان وتمتد النغمات في المكان، ويتجدد المشهد أمامك في كل لحظة.</p></div>
+              <button class="card-link" type="button" data-detail>اكتشف المزيد <span aria-hidden="true">←</span></button>
+            </div>
+          </article>
+
+          <article class="art-card reveal" data-title="إيقاع يتحرك معك" data-en="Multi Jumping Universe" data-desc="حين تنتقل من مستوى إلى آخر، يتفكك المشهد ويعود بالألوان والأنماط بشكل مختلف؛ إيقاع حركتك هو ما يرسم اللوحة." data-extra="قفزاتك هي التي تُحوّل المشهد؛ كل قفزة تفتح طبقة جديدة من الألوان والأنماط في العالم الرقمي." data-duration="تجربة حركية">
+            <div class="media media--art-2" data-img="assets/img/Multi-Jumping-Universe.webp" role="img" aria-label="عمل Multi Jumping Universe">
+              <div class="media__placeholder"><span class="media__symbol">✦</span><strong>مساحة للصورة</strong><small>Multi-Jumping-Universe.webp</small></div>
+            </div>
+            <div class="art-card__body">
+              <div class="art-card__top"><span class="badge">حركة رقمية</span><span class="art-index">02</span></div>
+              <h3>إيقاع يتحرك معك</h3>
+              <span class="en-name" dir="ltr">Multi Jumping Universe</span>
+              <div class="art-explain"><span>كيف تعمل التجربة؟</span><p>حين تنتقل من مستوى إلى آخر، يتفكك المشهد ويعود بالألوان والأنماط بشكل مختلف؛ إيقاع حركتك هو ما يرسم اللوحة.</p></div>
+              <button class="card-link" type="button" data-detail>اكتشف المزيد <span aria-hidden="true">←</span></button>
+            </div>
+          </article>
+
+          <article class="art-card reveal" data-title="سماء تتحرك حولك" data-en="Aerial Climbing through a Flock of Colored Birds" data-desc="أي اقتراب من المشهد يدفع الكائنات الطائرة إلى تغيير مساراتها، فتنفتح زوايا جديدة وتبدو المساحة وكأنها تمتد بلا نهاية." data-extra="عند اقترابك، تنطلق الطيور وتتغير مساراتها، لينفتح أمامك مشهد جديد في كل خطوة." data-duration="تجربة بصرية">
+            <div class="media media--art-3" data-img="assets/img/Aerial-Climbing.webp" role="img" aria-label="عمل Aerial Climbing through a Flock of Colored Birds">
+              <div class="media__placeholder"><span class="media__symbol">✦</span><strong>مساحة للصورة</strong><small>Aerial-Climbing.webp</small></div>
+            </div>
+            <div class="art-card__body">
+              <div class="art-card__top"><span class="badge">طيور وضوء</span><span class="art-index">03</span></div>
+              <h3>سماء تتحرك حولك</h3>
+              <span class="en-name" dir="ltr">Aerial Climbing through a Flock of Colored Birds</span>
+              <div class="art-explain"><span>كيف تعمل التجربة؟</span><p>أي اقتراب من المشهد يدفع الكائنات الطائرة إلى تغيير مساراتها، فتنفتح زوايا جديدة وتبدو المساحة وكأنها تمتد بلا نهاية.</p></div>
+              <button class="card-link" type="button" data-detail>اكتشف المزيد <span aria-hidden="true">←</span></button>
+            </div>
+          </article>
+
+          <article class="art-card reveal" data-title="ما وراء النافذة" data-en="A Window to the Universe where Little People Live" data-desc="تأمّل التفاصيل الدقيقة في المشهد؛ ستلاحظ كائنات تتحرك وفق إيقاع الزمن، وتستجيب لوقوفك أمامها بتغيّر في حركتها." data-extra="اقترب من النافذة وتأمل التفاصيل الصغيرة؛ الشخصيات تتحرك وتتفاعل مع الوقت ومع وجودك أمامها." data-duration="تأمل وتفاعل">
+            <div class="media media--art-4" data-img="assets/img/Window-to-the-Universe.avif" role="img" aria-label="عمل A Window to the Universe where Little People Live">
+              <div class="media__placeholder"><span class="media__symbol">✦</span><strong>مساحة للصورة</strong><small>Window-to-the-Universe.avif</small></div>
+            </div>
+            <div class="art-card__body">
+              <div class="art-card__top"><span class="badge">عالم خيالي</span><span class="art-index">04</span></div>
+              <h3>ما وراء النافذة</h3>
+              <span class="en-name" dir="ltr">A Window to the Universe where Little People Live</span>
+              <div class="art-explain"><span>كيف تعمل التجربة؟</span><p>تأمّل التفاصيل الدقيقة في المشهد؛ ستلاحظ كائنات تتحرك وفق إيقاع الزمن، وتستجيب لوقوفك أمامها بتغيّر في حركتها.</p></div>
+              <button class="card-link" type="button" data-detail>اكتشف المزيد <span aria-hidden="true">←</span></button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Difference ============ -->
+    <section class="section" id="difference">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">متحف بلا حدود... فما السر؟</span>
+          <h2 class="section-title">ما الذي يجعل المتحف مختلفًا؟</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <span class="feature-icon" aria-hidden="true">✧</span>
+            <h3>فن متحرك</h3>
+            <p>الأعمال الفنية لا تبقى ثابتة، بل تتغير وتتطور أمامك باستمرار.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-icon" aria-hidden="true">◎</span>
+            <h3>تجربة تفاعلية</h3>
+            <p>الزائر ليس مجرد مشاهد، بل جزء أساسي من العمل الفني.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-icon" aria-hidden="true">∞</span>
+            <h3>عوالم مترابطة</h3>
+            <p>يمكن للأعمال الفنية الانتقال والتداخل بين المساحات المختلفة.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-icon" aria-hidden="true">↗</span>
+            <h3>اكتشاف بلا مسار</h3>
+            <p>ستطيع الزائر التجول واستكشاف العوالم بطريقته الخاصة، بلا خريطة إلزامية.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Tickets & Booking ============ -->
+    <section class="section section--tint" id="tickets">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">التذاكر والحجز</span>
+          <h2 class="section-title">اختر تذكرتك وابدأ الرحلة</h2>
+          <p class="section-lead">احجز مسبقاً لضمان دخولك في الوقت المناسب، خاصة في عطلات نهاية الأسبوع والمناسبات.</p>
+        </div>
+
+        <div class="ticket-grid">
+          <article class="ticket-card reveal" data-ticket="general">
+            <span class="ticket-tag">الأكثر طلباً</span>
+            <h3>تذكرة عامة</h3>
+            <p class="ticket-price"><strong>120</strong><span>ر.س</span></p>
+            <ul><li>دخول لجميع العوالم</li><li>زائر واحد (12 سنة فأكثر)</li><li>صالحة ليوم الزيارة المختار</li></ul>
+            <button class="btn btn--ghost btn--full" type="button" data-select-ticket="general">اختر التذكرة</button>
+          </article>
+          <article class="ticket-card reveal" data-ticket="child">
+            <h3>تذكرة طفل</h3>
+            <p class="ticket-price"><strong>80</strong><span>ر.س</span></p>
+            <ul><li>للأعمار من 3 إلى 11 سنة</li><li>دخول لجميع العوالم</li><li>يجب مرافقة بالغ داخل المتحف</li></ul>
+            <button class="btn btn--ghost btn--full" type="button" data-select-ticket="child">اختر التذكرة</button>
+          </article>
+          <article class="ticket-card reveal" data-ticket="family">
+            <span class="ticket-tag ticket-tag--alt">أفضل قيمة</span>
+            <h3>تذكرة العائلة</h3>
+            <p class="ticket-price"><strong>350</strong><span>ر.س</span></p>
+            <ul><li>بالغان + طفلان</li><li>دخول لجميع العوالم</li><li>توفير 50 ر.س مقارنة بالتذاكر الفردية</li></ul>
+            <button class="btn btn--ghost btn--full" type="button" data-select-ticket="family">اختر التذكرة</button>
+          </article>
+          <article class="ticket-card reveal" data-ticket="vip">
+            <h3>تجربة كبار الزوار</h3>
+            <p class="ticket-price"><strong>250</strong><span>ر.س</span></p>
+            <ul><li>دخول سريع دون انتظار</li><li>مرافقة في جولة تصوير</li><li>هدية تذكارية من المتحف</li></ul>
+            <button class="btn btn--ghost btn--full" type="button" data-select-ticket="vip">اختر التذكرة</button>
+          </article>
+        </div>
+
+        <p class="ticket-note reveal">الأطفال دون 3 سنوات يدخلون مجاناً. الأسعار شاملة ضريبة القيمة المضافة، وقد تتغير في المناسبات؛ تحقق من قسم الأخبار قبل الزيارة.</p>
+
+        <div class="booking-panel reveal" id="booking-panel">
+          <div class="booking-head">
+            <div>
+              <span class="eyebrow">حجز مباشر</span>
+              <h3>احجز زيارتك في دقائق</h3>
+            </div>
+            <button class="btn btn--text" type="button" id="show-bookings">حجوزاتي <span aria-hidden="true">←</span></button>
+          </div>
+          <form id="booking-form" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="book-ticket">نوع التذكرة</label>
+                <select id="book-ticket" name="ticket" required>
+                  <option value="general">تذكرة عامة — 120 ر.س</option>
+                  <option value="child">تذكرة طفل — 80 ر.س</option>
+                  <option value="family">تذكرة العائلة — 350 ر.س</option>
+                  <option value="vip">تجربة كبار الزوار — 250 ر.س</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="book-date">تاريخ الزيارة</label>
+                <input id="book-date" name="date" type="date" required>
+                <small class="field-hint" id="date-hint">الإثنين يوم إغلاق أسبوعي — اختر يوماً آخر.</small>
+              </div>
+              <div class="field">
+                <label for="book-time">الوقت</label>
+                <select id="book-time" name="time" required></select>
+              </div>
+              <div class="field">
+                <label for="book-qty">عدد التذاكر</label>
+                <div class="stepper">
+                  <button type="button" data-step="-1" aria-label="تقليل العدد">−</button>
+                  <input id="book-qty" name="qty" type="number" value="1" min="1" max="10" readonly>
+                  <button type="button" data-step="1" aria-label="زيادة العدد">+</button>
+                </div>
+              </div>
+              <div class="field">
+                <label for="book-name">الاسم الكامل</label>
+                <input id="book-name" name="name" type="text" autocomplete="name" placeholder="اسمك الكامل" required>
+              </div>
+              <div class="field">
+                <label for="book-phone">رقم الجوال</label>
+                <input id="book-phone" name="phone" type="tel" autocomplete="tel" dir="ltr" placeholder="05xxxxxxxx" required>
+              </div>
+            </div>
+            <div class="booking-summary">
+              <div>
+                <span>الإجمالي</span>
+                <strong id="booking-total">120 ر.س</strong>
+              </div>
+              <p id="booking-message" role="status" aria-live="polite"></p>
+              <button class="btn btn--primary" type="submit">تأكيد الحجز <span aria-hidden="true">←</span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Visit Info ============ -->
+    <section class="section" id="visit">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">معلومات الزيارة</span>
+          <h2 class="section-title">أين تجدنا؟ ومتى نفتح؟</h2>
+          <p class="section-lead">خطط لزيارتك مسبقاً لتستمتع بكل عالم من عوالم المتحف دون استعجال.</p>
+        </div>
+        <div class="visit-grid">
+          <article class="visit-card reveal">
+            <span class="visit-icon" aria-hidden="true">⌖</span>
+            <h3>الموقع</h3>
+            <p>ميدان الثقافة، جدة التاريخية، جدة، المملكة العربية السعودية.</p>
+            <a class="inline-link" href="https://www.google.com/maps/search/?api=1&query=Jeddah+Historic+District+Culture+Square" target="_blank" rel="noopener">افتح الموقع على الخريطة ←</a>
+          </article>
+          <article class="visit-card reveal">
+            <span class="visit-icon" aria-hidden="true">◷</span>
+            <h3>أيام العمل والمواعيد</h3>
+            <ul class="hours-list">
+              <li><span>السبت – الأربعاء</span><strong>10:00 ص – 10:00 م</strong></li>
+              <li><span>الخميس والجمعة</span><strong>10:00 ص – 11:00 م</strong></li>
+              <li class="closed"><span>الإثنين</span><strong>مغلق (صيانة دورية)</strong></li>
+            </ul>
+            <p class="visit-small">آخر دخول قبل الإغلاق بـ 60 دقيقة.</p>
+          </article>
+          <article class="visit-card reveal">
+            <span class="visit-icon" aria-hidden="true">✺</span>
+            <h3>أيام العطل والمناسبات</h3>
+            <ul class="holiday-list">
+              <li><strong>22 فبراير</strong><span>يوم التأسيس — ساعات عمل خاصة</span></li>
+              <li><strong>23 سبتمبر</strong><span>اليوم الوطني — ساعات عمل خاصة</span></li>
+              <li><strong>عيد الفطر وعيد الأضحى</strong><span>تُعلن المواعيد قبل العيد بيومين</span></li>
+            </ul>
+            <p class="visit-small">قد تتغير الساعات في الإجازات الرسمية؛ تابع قسم الأخبار.</p>
+          </article>
+          <article class="visit-card reveal">
+            <span class="visit-icon" aria-hidden="true">✦</span>
+            <h3>نصائح قبل الزيارة</h3>
+            <ul class="tips-list">
+              <li>احضر قبل موعدك بـ 15 دقيقة.</li>
+              <li>ارتدِ ملابس مريحة للحركة.</li>
+              <li>التصوير مسموح دون فلاش.</li>
+              <li>الأطفال دون 3 سنوات مجاناً.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ News ============ -->
+    <section class="section section--tint" id="news">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">الأخبار والإعلانات</span>
+          <h2 class="section-title">جديد في عالم بلا حدود</h2>
+          <p class="section-lead">كل ما يحدث في المتحف: افتتاحات، فعاليات، وتنبيهات قبل زيارتك.</p>
+        </div>
+        <div class="news-filters reveal" role="group" aria-label="تصفية الأخبار">
+          <button class="filter-btn is-active" type="button" data-news-filter="all" aria-pressed="true">الكل</button>
+          <button class="filter-btn" type="button" data-news-filter="news" aria-pressed="false">أخبار</button>
+          <button class="filter-btn" type="button" data-news-filter="event" aria-pressed="false">فعاليات</button>
+          <button class="filter-btn" type="button" data-news-filter="notice" aria-pressed="false">إعلانات</button>
+        </div>
+        <div class="news-grid" id="news-grid">
+          <article class="news-card reveal" data-cat="news" data-full="أعلن المتحف عن افتتاح نسخة جديدة من غابة المصابيح بتصميم إضاءة موسّع وأرضية عاكسة تضاعف عمق المشهد. النسخة الجديدة متاحة لجميع الزوار ضمن التذكرة العامة، وتستمر حتى إشعار آخر.">
+            <div class="news-meta"><span class="news-cat">أخبار</span><time datetime="2026-11-12">12 نوفمبر 2026</time></div>
+            <h3>افتتاح بوابة «غابة المصابيح» بتصميم جديد</h3>
+            <p>تصميم إضاءة موسّع وأرضية عاكسة تضاعف عمق المشهد الضوئي.</p>
+            <button class="card-link" type="button" data-news-toggle>اقرأ المزيد <span aria-hidden="true">←</span></button>
+          </article>
+          <article class="news-card reveal" data-cat="event" data-full="ورشة تفاعلية مفتوحة للأطفال والعائلات يشاركون خلالها في رسم كائنات بحرية تظهر مباشرة داخل محيط الرسومات. الورشة مجانية مع تذكرة الدخول، وتبدأ الساعة 11 صباحاً يومي الخميس والجمعة.">
+            <div class="news-meta"><span class="news-cat">فعالية</span><time datetime="2026-10-28">28 أكتوبر 2026</time></div>
+            <h3>تجربة «محيط الرسومات» للأطفال والعائلات</h3>
+            <p>ورشة رسم تتحول رسوماتك فيها إلى كائنات تسبح في المحيط الرقمي.</p>
+            <button class="card-link" type="button" data-news-toggle>اقرأ المزيد <span aria-hidden="true">←</span></button>
+          </article>
+          <article class="news-card reveal" data-cat="notice" data-full="تهيئة لذروة الإقبال في موسم العطلات: سيعمل المتحف حتى الساعة 11 مساءً يومي الخميس والجمعة، مع تخصيص فترات دخول كل 30 دقيقة. يُنصح بالحجز المسبق لتأكيد وقتك.">
+            <div class="news-meta"><span class="news-cat">إعلان</span><time datetime="2026-10-20">20 أكتوبر 2026</time></div>
+            <h3>تعديل ساعات العمل في موسم العطلات</h3>
+            <p>فترات دخول كل 30 دقيقة في نهاية الأسبوع، مع تأكيد الحجز مسبقاً.</p>
+            <button class="card-link" type="button" data-news-toggle>اقرأ المزيد <span aria-hidden="true">←</span></button>
+          </article>
+          <article class="news-card reveal" data-cat="event" data-full="بالشراكة مع ميدان الثقافة، يستضيف المتحف لقاءً فنياً بعنوان «الفن في الحركة» يناقش كيف تتحول الحركة إلى لوحة رقمية. اللقاء مفتوح للجمهور ومخصص لحاملي التذاكر.">
+            <div class="news-meta"><span class="news-cat">فعالية</span><time datetime="2026-10-05">5 أكتوبر 2026</time></div>
+            <h3>ورشة «الفن في الحركة» مع ميدان الثقافة</h3>
+            <p>لقاء فني يشرح كيف تتحول حركة الزائر إلى مشهد بصري متغير.</p>
+            <button class="card-link" type="button" data-news-toggle>اقرأ المزيد <span aria-hidden="true">←</span></button>
+          </article>
+          <article class="news-card reveal" data-cat="notice" data-full="تذكير دائم: يوم الإثنين مخصص للصيانة الدورية وأعمال تطوير الأعمال الفنية، ولا يستقبل المتحف الزوار في هذا اليوم. نعتذر عن أي إزعاج ونرجو التحقق من تقويم الزيارة قبل الحجز.">
+            <div class="news-meta"><span class="news-cat">إعلان</span><time datetime="2026-09-22">22 سبتمبر 2026</time></div>
+            <h3>تذكير: الإثنين يوم صيانة دورية</h3>
+            <p>المتحف مغلق كل إثنين لتطوير الأعمال الفنية وصيانة الأنظمة.</p>
+            <button class="card-link" type="button" data-news-toggle>اقرأ المزيد <span aria-hidden="true">←</span></button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Gallery ============ -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">معرض الصور</span>
+          <h2 class="section-title">لحظات من عالم لا يشبه غيره</h2>
+          <p class="section-lead">مجموعة من المشاهد التي تجمع بين الضوء والطبيعة والتكنولوجيا، وتوثّق جمال التجارب الفنية داخل المتحف. اضغط على أي صورة لتكبيرها.</p>
+        </div>
+        <div class="gallery-grid">
+          <button class="gallery-item reveal media media--g1" type="button" data-img="assets/img/gallery-01.jpg" data-caption="انعكاسات الضوء في غابة المصابيح" aria-label="عرض الصورة: انعكاسات الضوء في غابة المصابيح">
+            <span class="media__placeholder"><span class="media__symbol">✦</span><strong>مساحة للصورة</strong><small>gallery-01.jpg</small></span>
+          </button>
+          <button class="gallery-item reveal media media--g2" type="button" data-img="assets/img/gallery-02.jpg" data-caption="زائر يتفاعل مع كرة ضوئية" aria-label="عرض الصورة: زائر يتفاعل مع كرة ضوئية">
+            <span class="media__placeholder"><span class="media__symbol">✦</span><strong>مساحة للصورة</strong><small>gallery-02.jpg</small></span>
+          </button>
+          <button class="gallery-item reveal media media--g3" type="button" data-img="assets/img/gallery-03.jpg" data-caption="ألوان تتدفق على الأرضيات" aria-label="عرض الصورة: ألوان تتدفق على الأرضيات">
+            <span class="media__placeholder"><span class="media__symbol">✦</span><strong>مساحة للصورة</strong><small>gallery-03.jpg</small></span>
+          </button>
+          <button class="gallery-item reveal media media--g4" type="button" data-img="assets/img/gallery-04.jpg" data-caption="مشهد من الضوء والظل" aria-label="عرض الصورة: مشهد من الضوء والظل">
+            <span class="media__placeholder"><span class="media__symbol">✦</span><strong>مساحة للصورة</strong><small>gallery-04.jpg</small></span>
+          </button>
+          <button class="gallery-item reveal media media--g5" type="button" data-img="assets/img/gallery-05.jpg" data-caption="رسومات تتحول إلى كائنات بحرية" aria-label="عرض الصورة: رسومات تتحول إلى كائنات بحرية">
+            <span class="media__placeholder"><span class="media__symbol">✦</span><strong>مساحة للصورة</strong><small>gallery-05.jpg</small></span>
+          </button>
+          <button class="gallery-item reveal media media--g6" type="button" data-img="assets/img/gallery-06.jpg" data-caption="زهرة رقمية تتفتح داخل الكوب" aria-label="عرض الصورة: زهرة رقمية تتفتح داخل الكوب">
+            <span class="media__placeholder"><span class="media__symbol">✦</span><strong>مساحة للصورة</strong><small>gallery-06.jpg</small></span>
+          </button>
+          <button class="gallery-item reveal media media--g7" type="button" data-img="assets/img/gallery-07.jpg" data-caption="طيور ملونة في عالم رقمي" aria-label="عرض الصورة: طيور ملونة في عالم رقمي">
+            <span class="media__placeholder"><span class="media__symbol">✦</span><strong>مساحة للصورة</strong><small>gallery-07.jpg</small></span>
+          </button>
+          <button class="gallery-item reveal media media--g8" type="button" data-img="assets/img/gallery-08.jpg" data-caption="جدة التاريخية تلتقي بالفن الرقمي" aria-label="عرض الصورة: جدة التاريخية تلتقي بالفن الرقمي">
+            <span class="media__placeholder"><span class="media__symbol">✦</span><strong>مساحة للصورة</strong><small>gallery-08.jpg</small></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Contact ============ -->
+    <section class="section section--tint" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <span class="eyebrow">الاستفسارات</span>
+          <h2 class="section-title">نحن هنا للإجابة عن أسئلتك</h2>
+          <p>استفسارات الحجز، المناسبات الخاصة، الزيارات المدرسية، أو أي سؤال آخر — أرسل لنا رسالة وسنرد عليك في أقرب وقت.</p>
+          <ul class="contact-list">
+            <li><span class="contact-icon" aria-hidden="true">⌖</span><span><strong>العنوان</strong><span>ميدان الثقافة، جدة التاريخية، جدة</span></span></li>
+            <li><span class="contact-icon" aria-hidden="true">✆</span><span><strong>الهاتف</strong><span dir="ltr">+966 12 000 0000</span></span></li>
+            <li><span class="contact-icon" aria-hidden="true">✉</span><span><strong>البريد الإلكتروني</strong><span dir="ltr">hello@teamlab-jeddah.example</span></span></li>
+          </ul>
+          <div class="social-block">
+            <strong>تابعنا على</strong>
+            <div class="social-links">
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">◎</a>
+              <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X" title="X">𝕏</a>
+              <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">♪</a>
+              <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">▶</a>
+              <a href="https://www.snapchat.com/" target="_blank" rel="noopener" aria-label="Snapchat" title="Snapchat">◐</a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">in</a>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="field"><label for="inq-name">الاسم</label><input id="inq-name" name="name" type="text" autocomplete="name" placeholder="اسمك" required></div>
+            <div class="field"><label for="inq-email">البريد الإلكتروني</label><input id="inq-email" name="email" type="email" autocomplete="email" dir="ltr" placeholder="you@example.com" required></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="inq-phone">رقم الجوال (اختياري)</label><input id="inq-phone" name="phone" type="tel" autocomplete="tel" dir="ltr" placeholder="05xxxxxxxx"></div>
+            <div class="field"><label for="inq-subject">موضوع الاستفسار</label>
+              <select id="inq-subject" name="subject">
+                <option>استفسار عن التذاكر</option>
+                <option>حجز مجموعة أو مناسبة خاصة</option>
+                <option>زيارة مدرسية</option>
+                <option>استفسار عن الأعمال الفنية</option>
+                <option>موضوع آخر</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label for="inq-message">رسالتك</label><textarea id="inq-message" name="message" rows="5" placeholder="اكتب استفسارك هنا..." required></textarea></div>
+          <p class="form-status" id="inq-status" role="status" aria-live="polite"></p>
+          <button class="btn btn--primary" type="submit">إرسال الاستفسار <span aria-hidden="true">←</span></button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ Closing ============ -->
+    <section class="closing" id="closing">
+      <div class="closing-glow" aria-hidden="true"></div>
+      <div class="container closing-inner reveal">
+        <span class="eyebrow">الخاتمة</span>
+        <h2>كل اكتشاف يفتح بابًا لعالم جديد</h2>
+        <p>وفي ختام رحلتنا، نكتشف أن الفن لا يحتاج إلى حدود، وأن التكنولوجيا قادرة على تحويل الخيال إلى تجربة نعيشها بكل حواسنا.</p>
+        <p class="closing-thanks">شكرًا لزيارتكم عالم تيم لاب بلا حدود، نتمنى أن تكون رحلتكم مليئة بالإلهام والاكتشاف!</p>
+        <button class="btn btn--primary" type="button" data-book-scroll>احجز رحلتك الآن <span aria-hidden="true">←</span></button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="#home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M24 24c-5-8-9-11-13-11C6 13 3 17 3 22s3 9 8 9c5 0 9-4 13-7 4 3 8 7 13 7 5 0 8-4 8-9s-3-9-8-9c-4 0-8 3-13 11Z"/></svg>
+          </span>
+          <span class="brand-text"><strong>تيم لاب بلا حدود</strong><small>teamLab Borderless · Jeddah</small></span>
+        </a>
+        <p>متحف الفن الرقمي التفاعلي في قلب جدة التاريخية. عالم تتداخل فيه الأضواء والألوان والحركة بلا حدود.</p>
+        <div class="social-links footer-social">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+          <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X">𝕏</a>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">♪</a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">▶</a>
+          <a href="https://www.snapchat.com/" target="_blank" rel="noopener" aria-label="Snapchat">◐</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>استكشف</h4>
+        <a href="#about">عن المتحف</a>
+        <a href="#worlds">العوالم الفنية</a>
+        <a href="#artworks">الأعمال الفنية</a>
+        <a href="#gallery">معرض الصور</a>
+      </div>
+      <div class="footer-col">
+        <h4>الزيارة</h4>
+        <a href="#tickets">التذاكر والحجز</a>
+        <a href="#visit">المواعيد والعطل</a>
+        <a href="#news">الأخبار والإعلانات</a>
+        <a href="#contact">الاستفسارات</a>
+      </div>
+      <div class="footer-col footer-newsletter">
+        <h4>نشرة الأخبار</h4>
+        <p>اشترك لتصلك أحدث الأخبار والفعاليات.</p>
+        <form id="newsletter-form" novalidate>
+          <input type="email" name="email" placeholder="بريدك الإلكتروني" dir="ltr" aria-label="البريد الإلكتروني للنشرة" required>
+          <button type="submit" aria-label="اشترك">→</button>
+        </form>
+        <p class="newsletter-status" id="newsletter-status" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year">2026</span> تيم لاب بلا حدود - جدة. جميع الحقوق محفوظة.</span>
+      <span>صُنع لعالم بلا حدود <span aria-hidden="true">∞</span></span>
+    </div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="العودة إلى الأعلى">↑</button>
+  <div class="toast-wrap" id="toast-wrap" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ============ Dialogs ============ -->
+  <dialog class="modal detail-modal" id="detail-dialog" aria-labelledby="detail-title">
+    <div class="modal-shell">
+      <button class="modal-close" type="button" data-close-dialog aria-label="إغلاق">×</button>
+      <div class="modal-media media" id="detail-media" role="img" aria-label="صورة التفصيل">
+        <div class="media__placeholder"><span class="media__symbol">✦</span><strong>مساحة للصورة</strong><small>تفاصيل التجربة</small></div>
+      </div>
+      <div class="modal-body">
+        <span class="eyebrow" id="detail-eyebrow">تجربة تفاعلية</span>
+        <h2 id="detail-title"></h2>
+        <span class="en-name" id="detail-en" dir="ltr"></span>
+        <p id="detail-desc"></p>
+        <div class="detail-extra" id="detail-extra"></div>
+        <div class="detail-meta">
+          <span>المدة التقديرية</span>
+          <strong id="detail-duration"></strong>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn--primary" type="button" id="detail-book">احجز تجربتك <span aria-hidden="true">←</span></button>
+          <button class="btn btn--ghost" type="button" data-close-dialog>إغلاق</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal booking-confirm" id="booking-dialog" aria-labelledby="booking-dialog-title">
+    <div class="modal-shell modal-shell--center">
+      <button class="modal-close" type="button" data-close-dialog aria-label="إغلاق">×</button>
+      <div class="success-mark" aria-hidden="true">✓</div>
+      <span class="eyebrow">تم تأكيد الحجز</span>
+      <h2 id="booking-dialog-title">رحلتك تبدأ هنا</h2>
+      <p>احتفظ برقم الحجز التالي واعرضه عند الدخول.</p>
+      <div class="booking-ref" id="booking-ref">TLB-0000</div>
+      <div class="booking-details" id="booking-details"></div>
+      <p class="modal-note">هذا تأكيد تجريبي محفوظ على هذا الجهاز فقط. لن يُرسل أي بريد إلكتروني.</p>
+      <div class="modal-actions modal-actions--center">
+        <button class="btn btn--primary" type="button" data-close-dialog>حسناً</button>
+        <button class="btn btn--ghost" type="button" id="show-bookings-after">عرض حجوزاتي</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal bookings-modal" id="bookings-dialog" aria-labelledby="bookings-title">
+    <div class="modal-shell">
+      <button class="modal-close" type="button" data-close-dialog aria-label="إغلاق">×</button>
+      <span class="eyebrow">حجوزاتك</span>
+      <h2 id="bookings-title">حجوزاتي</h2>
+      <div id="bookings-list" class="bookings-list"></div>
+      <div class="modal-actions"><button class="btn btn--ghost" type="button" data-close-dialog>إغلاق</button></div>
+    </div>
+  </dialog>
+
+  <dialog class="modal gallery-modal" id="gallery-dialog" aria-label="عرض الصور">
+    <div class="gallery-modal-inner">
+      <button class="modal-close" type="button" data-close-dialog aria-label="إغلاق">×</button>
+      <div class="media gallery-modal-media" id="gallery-modal-media" role="img" aria-label="الصورة المكبرة">
+        <div class="media__placeholder"><span class="media__symbol">✦</span><strong>مساحة للصورة</strong><small>صورة المعرض</small></div>
+      </div>
+      <div class="gallery-modal-bar">
+        <button type="button" id="gallery-prev" aria-label="الصورة السابقة">→</button>
+        <span id="gallery-caption"></span>
+        <span class="gallery-count" id="gallery-count"></span>
+        <button type="button" id="gallery-next" aria-label="الصورة التالية">←</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="assets/js/main.js?v=2"></script>
+</body>
+</html>
