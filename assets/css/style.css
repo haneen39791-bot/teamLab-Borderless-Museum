@@ -444,16 +444,44 @@ ul { padding: 0; list-style: none; }
 .modal-body { padding: 40px 34px; }
 .modal-body h2, .bookings-modal h2, .booking-confirm h2 { font-size: 1.7rem; line-height: 1.4; margin-bottom: 8px; }
 .modal-body > p { color: var(--muted); font-size: .92rem; }
-.detail-overview { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
-.detail-overview[hidden] { display: none; }
-.detail-overview h3 { font-size: 1.05rem; margin-bottom: 4px; color: var(--c1); }
-.detail-overview__lead { color: var(--muted); font-size: .84rem; line-height: 1.7; margin: 0 0 14px; }
-.detail-overview-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-.detail-overview-item { padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255, 255, 255, .02); }
-.detail-overview-item > span { color: var(--c1); font-size: 1.15rem; line-height: 1; }
-.detail-overview-item strong { display: block; margin: 5px 0 4px; font-size: .86rem; }
-.detail-overview-item p { margin: 0; color: var(--muted); font-size: .76rem; line-height: 1.65; }
-@media (max-width: 640px) { .detail-overview-grid { grid-template-columns: 1fr; } }
+/* Overview: staggered, auto-moving horizontal strip in the Worlds section */
+.worlds-overview { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
+.worlds-overview[hidden] { display: none; }
+.worlds-overview h3 { font-size: 1.05rem; margin-bottom: 4px; color: var(--c1); }
+.worlds-overview__lead { color: var(--muted); font-size: .84rem; line-height: 1.7; margin: 0 0 6px; }
+.worlds-overview-viewport {
+  /* Keep the strip physically LTR in both languages so the duplicate always feeds in from the right */
+  direction: ltr;
+  overflow: hidden; padding: 20px 0 28px; margin-inline: -6px;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.worlds-overview-rail { display: flex; width: max-content; animation: overview-slide 40s linear infinite; will-change: transform; }
+/* Each set owns its 14px gap, including the one after the last card, so the loop seam is exact */
+.worlds-overview-set { display: flex; gap: 14px; padding-right: 14px; }
+html[lang="ar"] .worlds-overview-item { direction: rtl; }
+/* Arabic flows right-to-left, English flows left-to-right */
+html[lang="en"] .worlds-overview-rail { animation-direction: reverse; }
+@keyframes overview-slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.worlds-overview-item {
+  flex: 0 0 210px; display: flex; flex-direction: column; overflow: hidden;
+  border: 1px solid var(--line); border-radius: 14px; background: var(--surface);
+}
+.worlds-overview-item:nth-child(even) { flex-direction: column-reverse; transform: translateY(14px); }
+.worlds-overview-thumb { height: 92px; flex: 0 0 92px; }
+.worlds-overview-thumb .media__symbol { font-size: 1.5rem; }
+.worlds-overview-thumb .media__placeholder small { display: none; }
+.worlds-overview-copy { padding: 12px 14px 14px; }
+.worlds-overview-badge {
+  display: inline-block; font-size: .66rem; font-weight: 700; color: var(--c4);
+  border: 1px solid rgba(251, 191, 36, .3); background: rgba(251, 191, 36, .08);
+  border-radius: 999px; padding: 2px 9px; margin-bottom: 7px;
+}
+.worlds-overview-copy strong { display: block; font-size: .92rem; margin-bottom: 2px; }
+.worlds-overview-en { display: block; font-size: .68rem; color: var(--c1); margin-bottom: 7px; }
+.worlds-overview-copy p { margin: 0; color: var(--muted); font-size: .76rem; line-height: 1.65; }
+@media (prefers-reduced-motion: reduce) { .worlds-overview-rail { animation: none; } }
+@media (max-width: 640px) { .worlds-overview-item { flex-basis: 180px; } }
 
 .detail-extra { margin-top: 18px; padding: 16px 18px; border-radius: 12px; background: rgba(251, 191, 36, .1); border-inline-start: 3px solid var(--c2); color: #e8f4f8; font-size: .88rem; }
 .detail-meta { display: flex; justify-content: space-between; gap: 12px; margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--line-strong); font-size: .85rem; }
