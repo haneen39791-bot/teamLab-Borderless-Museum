@@ -464,7 +464,8 @@
 
   /* ---------------- Gallery lightbox ---------------- */
   const galleryDialog = $('#gallery-dialog');
-  const galleryItems = $$('.gallery-item');
+  // The animated strip duplicates the images for a seamless loop; only the first set drives the counter
+  const galleryItems = $$('.gallery-item:not([aria-hidden="true"])');
   let galleryIndex = 0;
   function renderGallery() {
     const item = galleryItems[galleryIndex];
@@ -473,8 +474,8 @@
     $('#gallery-caption').textContent = item.dataset.caption || '';
     $('#gallery-count').textContent = (galleryIndex + 1) + ' / ' + galleryItems.length;
   }
-  galleryItems.forEach((item, i) => item.addEventListener('click', () => {
-    galleryIndex = i;
+  $$('.gallery-item').forEach((item) => item.addEventListener('click', () => {
+    galleryIndex = Number(item.dataset.index) || 0;
     renderGallery();
     closeAllDialogsExcept(galleryDialog);
     galleryDialog.showModal();
