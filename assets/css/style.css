@@ -245,7 +245,7 @@ ul { padding: 0; list-style: none; }
 .about-chips span { padding: 6px 13px; border-radius: 999px; font-size: .78rem; background: rgba(255, 255, 255, .06); border: 1px solid var(--line); color: #dbe9f0; }
 
 /* ---------------- Worlds & Artworks ---------------- */
-.world-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.world-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .art-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .world-card, .art-card {
   border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
@@ -260,6 +260,11 @@ ul { padding: 0; list-style: none; }
 .world-card h3, .art-card h3 { font-size: 1.24rem; line-height: 1.45; font-weight: 800; }
 .en-name { display: block; color: var(--muted); font-family: Arial, sans-serif; font-size: .78rem; margin-bottom: 10px; letter-spacing: .4px; }
 .world-card p, .art-card p { color: var(--muted); font-size: .88rem; line-height: 1.8; }
+/* Slightly more compact world cards; artwork cards keep their original size */
+.world-card .media { height: 180px; }
+.world-card__body { padding: 18px 20px 20px; }
+.world-card h3 { font-size: 1.1rem; line-height: 1.4; }
+.world-card p { font-size: .82rem; line-height: 1.7; }
 .art-card__top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .art-index { font: 700 .78rem Arial, sans-serif; color: rgba(255, 255, 255, .38); letter-spacing: 1px; }
 .art-card h3 { font-family: var(--font); font-size: 1.22rem; line-height: 1.45; font-weight: 800; }
@@ -301,6 +306,22 @@ ul { padding: 0; list-style: none; }
 .ticket-card ul { display: grid; gap: 9px; margin-bottom: 22px; }
 .ticket-card li { position: relative; padding-inline-start: 20px; color: var(--muted); font-size: .84rem; }
 .ticket-card li::before { content: "✓"; position: absolute; inset-inline-start: 0; color: var(--c1); font-weight: 700; }
+/* "Most popular" ticket highlighted in a warm violet that sits beside the navy/teal/gold palette */
+.ticket-card--popular {
+  border-color: rgba(167, 139, 250, .55);
+  background: linear-gradient(165deg, rgba(124, 58, 237, .3), rgba(24, 18, 48, .96));
+  box-shadow: 0 18px 48px rgba(76, 29, 149, .3), 0 0 36px rgba(139, 92, 246, .12);
+}
+.ticket-card--popular:hover, .ticket-card--popular.is-selected {
+  border-color: rgba(196, 181, 253, .85);
+  box-shadow: 0 22px 52px rgba(76, 29, 149, .38), 0 0 42px rgba(139, 92, 246, .18);
+}
+.ticket-card--popular .ticket-tag { background: #8b5cf6; color: #fff; }
+.ticket-card--popular .ticket-price strong {
+  background: linear-gradient(100deg, #c4b5fd, #fbbf24);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.ticket-card--popular li::before { color: #c4b5fd; }
 .ticket-note { text-align: center; color: var(--muted); font-size: .82rem; margin: 26px auto 0; max-width: 760px; }
 .booking-panel {
   margin-top: 44px; padding: 34px; border-radius: 26px; border: 1px solid var(--line-strong);
@@ -459,39 +480,6 @@ html[lang="en"] .gallery-rail { animation-direction: reverse; }
 .modal-body { padding: 40px 34px; }
 .modal-body h2, .bookings-modal h2, .booking-confirm h2 { font-size: 1.7rem; line-height: 1.4; margin-bottom: 8px; }
 .modal-body > p { color: var(--muted); font-size: .92rem; }
-/* Overview: static staggered cards in the Worlds section */
-.worlds-overview { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
-.worlds-overview[hidden] { display: none; }
-.worlds-overview h3 { font-size: 1.05rem; margin-bottom: 4px; color: var(--c1); }
-.worlds-overview__lead { color: var(--muted); font-size: .84rem; line-height: 1.7; margin: 0 0 6px; }
-.worlds-overview-viewport {
-  direction: ltr; overflow-x: auto; overflow-y: hidden; padding: 20px 0 28px; margin-inline: -6px;
-  scrollbar-width: thin; scrollbar-color: rgba(45, 212, 191, .45) transparent;
-}
-.worlds-overview-viewport::-webkit-scrollbar { height: 6px; }
-.worlds-overview-viewport::-webkit-scrollbar-thumb { background: rgba(45, 212, 191, .45); border-radius: 999px; }
-.worlds-overview-rail { display: flex; width: max-content; }
-.worlds-overview-set { display: flex; gap: 14px; padding-right: 14px; }
-html[lang="ar"] .worlds-overview-item { direction: rtl; }
-.worlds-overview-item {
-  flex: 0 0 210px; display: flex; flex-direction: column; overflow: hidden;
-  border: 1px solid var(--line); border-radius: 14px; background: var(--surface);
-}
-.worlds-overview-item:nth-child(even) { flex-direction: column-reverse; transform: translateY(14px); }
-.worlds-overview-thumb { height: 92px; flex: 0 0 92px; }
-.worlds-overview-thumb .media__symbol { font-size: 1.5rem; }
-.worlds-overview-thumb .media__placeholder small { display: none; }
-.worlds-overview-copy { padding: 12px 14px 14px; }
-.worlds-overview-badge {
-  display: inline-block; font-size: .66rem; font-weight: 700; color: var(--c4);
-  border: 1px solid rgba(251, 191, 36, .3); background: rgba(251, 191, 36, .08);
-  border-radius: 999px; padding: 2px 9px; margin-bottom: 7px;
-}
-.worlds-overview-copy strong { display: block; font-size: .92rem; margin-bottom: 2px; }
-.worlds-overview-en { display: block; font-size: .68rem; color: var(--c1); margin-bottom: 7px; }
-.worlds-overview-copy p { margin: 0; color: var(--muted); font-size: .76rem; line-height: 1.65; }
-@media (max-width: 640px) { .worlds-overview-item { flex-basis: 180px; } }
-
 .detail-extra { margin-top: 18px; padding: 16px 18px; border-radius: 12px; background: rgba(251, 191, 36, .1); border-inline-start: 3px solid var(--c2); color: #e8f4f8; font-size: .88rem; }
 .detail-meta { display: flex; justify-content: space-between; gap: 12px; margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--line-strong); font-size: .85rem; }
 .detail-meta span { color: var(--muted); }

@@ -538,8 +538,8 @@
     if (!canvas || !canvas.getContext) return;
     const ctx = canvas.getContext('2d');
     const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let width = 0, height = 0, particles = [], raf = null;
-    // Navy / teal / gold particle palette matching the site theme
+    let width = 0, height = 0, ribbons = [], petals = [], raf = null;
+    // Same navy / teal / gold palette — only the backdrop artwork has changed
     const colors = ['45,212,191', '20,184,166', '251,191,36', '94,234,212'];
 
     function resize() {
@@ -549,54 +549,69 @@
       canvas.width = Math.round(width * dpr);
       canvas.height = Math.round(height * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const count = Math.min(58, Math.max(22, Math.floor(width / 22)));
-      particles = Array.from({ length: count }, () => ({
+      ribbons = Array.from({ length: 7 }, (_, i) => ({
+        y: height * (0.14 + i * 0.12),
+        amp: 24 + Math.random() * 44,
+        freq: 180 + Math.random() * 150,
+        speed: (i % 2 ? 1 : -1) * (0.003 + Math.random() * 0.004),
+        phase: Math.random() * Math.PI * 2,
+        c: colors[i % colors.length],
+        lineWidth: i === 3 ? 2.2 : 1 + Math.random() * 1.2,
+        alpha: 0.14 + Math.random() * 0.16
+      }));
+      petals = Array.from({ length: 34 }, () => ({
         x: Math.random() * width,
         y: Math.random() * height,
-        r: 1 + Math.random() * 2.4,
-        vx: (Math.random() - .5) * .32,
-        vy: (Math.random() - .5) * .32,
+        r: 1.2 + Math.random() * 3.2,
+        vy: 0.12 + Math.random() * 0.34,
+        drift: (Math.random() - .5) * 0.22,
         c: colors[Math.floor(Math.random() * colors.length)],
-        a: .35 + Math.random() * .5
+        a: 0.22 + Math.random() * 0.4
       }));
       if (reduced) draw(false);
     }
+
     function draw(move) {
       ctx.clearRect(0, 0, width, height);
+
+      // Flowing light fields: calmer, museum-like backdrop in the existing palette
       ctx.globalCompositeOperation = 'lighter';
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-        if (move) {
-          p.x += p.vx; p.y += p.vy;
-          if (p.x < -20) p.x = width + 20;
-          if (p.x > width + 20) p.x = -20;
-          if (p.y < -20) p.y = height + 20;
-          if (p.y > height + 20) p.y = -20;
+      ribbons.forEach((r) => {
+        const grad = ctx.createLinearGradient(0, 0, width, 0);
+        grad.addColorStop(0, 'rgba(' + r.c + ',0)');
+        grad.addColorStop(.5, 'rgba(' + r.c + ',' + r.alpha + ')');
+        grad.addColorStop(1, 'rgba(' + r.c + ',0)');
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = r.lineWidth;
+        ctx.beginPath();
+        for (let x = -20; x <= width + 20; x += 14) {
+          const y = r.y
+            + Math.sin(x / r.freq + r.phase) * r.amp
+            + Math.sin(x / (r.freq * 1.8) - r.phase * 1.2) * (r.amp * .35);
+          if (x === -20) ctx.moveTo(x, y); else ctx.lineTo(x, y);
         }
-        const glow = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 7);
+        ctx.stroke();
+        if (move) r.phase += r.speed;
+      });
+
+      // Slowly drifting light petals
+      petals.forEach((p) => {
+        if (move) {
+          p.y -= p.vy;
+          p.x += p.drift;
+          if (p.y < -12) { p.y = height + 12; p.x = Math.random() * width; }
+          if (p.x < -12) p.x = width + 12;
+          if (p.x > width + 12) p.x = -12;
+        }
+        const glow = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 6);
         glow.addColorStop(0, 'rgba(' + p.c + ',' + p.a + ')');
         glow.addColorStop(1, 'rgba(' + p.c + ',0)');
         ctx.fillStyle = glow;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r * 7, 0, Math.PI * 2);
+        ctx.ellipse(p.x, p.y, p.r * 1.8, p.r, 0, 0, Math.PI * 2);
         ctx.fill();
-      }
+      });
       ctx.globalCompositeOperation = 'source-over';
-      ctx.strokeStyle = 'rgba(94,234,212,.07)';
-      ctx.lineWidth = 1;
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const a = particles[i], b = particles[j];
-          const dx = a.x - b.x, dy = a.y - b.y;
-          const dist = dx * dx + dy * dy;
-          if (dist < 15000) {
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.stroke();
-          }
-        }
-      }
       if (move) raf = requestAnimationFrame(() => draw(true));
     }
     resize();
