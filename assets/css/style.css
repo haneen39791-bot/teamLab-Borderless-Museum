@@ -68,7 +68,7 @@ ul { padding: 0; list-style: none; }
   width: 42px; height: 42px; display: grid; place-items: center; border-radius: 13px;
   background: var(--grad); color: #fff; box-shadow: 0 0 26px rgba(45, 212, 191, .28);
 }
-.brand-mark svg { width: 27px; }
+.brand-mark img { width: 30px; height: 30px; object-fit: contain; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.25; }
 .brand-text strong { font-size: 1rem; font-weight: 800; }
 .brand-text small { font-size: .64rem; color: var(--muted); letter-spacing: .3px; font-family: Arial, sans-serif; }
@@ -174,7 +174,10 @@ ul { padding: 0; list-style: none; }
 .hero {
   position: relative; min-height: 100vh; display: flex; align-items: center; padding: 110px 0 90px; overflow: hidden;
   /* Homepage backdrop: img1 with a soft navy overlay from the existing palette to keep text legible */
-  background: linear-gradient(180deg, rgba(11, 18, 32, .45), rgba(11, 18, 32, .78)), url('../img/img1.jpg') center center / cover no-repeat;
+  background:
+    linear-gradient(180deg, rgba(11, 18, 32, .45), rgba(11, 18, 32, .78)),
+    linear-gradient(115deg, rgba(139, 92, 246, .1), transparent 42%),
+    url('../img/img1.jpg') center center / cover no-repeat;
 }
 .hero-glow {
   position: absolute; width: 780px; height: 780px; border-radius: 50%; inset-inline-end: -260px; top: -260px;
@@ -281,7 +284,6 @@ ul { padding: 0; list-style: none; }
   padding: 30px 24px; border-radius: var(--radius); border: 1px solid var(--line);
   background: rgba(255, 255, 255, .025); text-align: center; transition: transform .25s, background .25s, border-color .25s;
 }
-.feature-card:hover { transform: translateY(-6px); background: rgba(251, 191, 36, .08); border-color: rgba(251, 191, 36, .35); }
 .feature-icon {
   display: grid; place-items: center; width: 58px; height: 58px; margin: 0 auto 16px;
   border-radius: 17px; font-size: 1.7rem; background: var(--grad); color: #fff; box-shadow: 0 12px 30px rgba(251, 191, 36, .3);
