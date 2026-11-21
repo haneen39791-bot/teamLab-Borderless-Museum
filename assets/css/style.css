@@ -287,14 +287,14 @@ ul { padding: 0; list-style: none; }
 .feature-icon {
   display: grid; place-items: center; width: 58px; height: 58px; margin: 0 auto 16px;
   border-radius: 17px; font-size: 1.7rem; color: #fff;
-  background: linear-gradient(135deg, #60a5fa, #3b82f6); box-shadow: 0 12px 30px rgba(59, 130, 246, .32);
+  background: #7560A8; box-shadow: 0 12px 30px rgba(117, 96, 168, .32);
 }
 .feature-card h3 { font-size: 1.08rem; margin-bottom: 8px; }
 .feature-card p { color: var(--muted); font-size: .88rem; }
-/* A soft light blue replaces the old yellow/violet accent in this section only.
+/* Exact #7560A8 accent for this section only.
    Use background-image (not the shorthand) so background-clip:text is preserved. */
 #difference .section-title {
-  background-image: linear-gradient(100deg, #fff 20%, #5eead4 70%, #93c5fd);
+  background-image: linear-gradient(100deg, #fff 20%, #5eead4 70%, #7560A8);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 
