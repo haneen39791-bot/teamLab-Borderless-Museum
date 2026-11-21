@@ -27,6 +27,7 @@
       noDate: 'اختر تاريخ زيارة غير يوم الإثنين.',
       pastDate: 'لا يمكن الحجز لتاريخ ماضٍ.',
       noTime: 'اختر وقت الدخول.',
+      noTicket: 'اختر نوع تذكرة واحداً على الأقل.',
       needName: 'اكتب اسمك الكامل.',
       needPhone: 'أدخل رقم جوال سعودي صحيح.',
       toastTicket: 'تم اختيار: ',
@@ -66,6 +67,7 @@
       noDate: 'Choose a visit date other than Monday.',
       pastDate: 'Cannot book a date in the past.',
       noTime: 'Choose an entry time.',
+      noTicket: 'Select at least one ticket type.',
       needName: 'Please enter your full name.',
       needPhone: 'Enter a valid Saudi mobile number.',
       toastTicket: 'Selected: ',
@@ -243,10 +245,9 @@
 
   /* ---------------- Booking ---------------- */
   const bookingForm = $('#booking-form');
-  const ticketSelect = $('#book-ticket');
+  const ticketBoxes = $$('#book-tickets input[type="checkbox"]');
   const dateInput = $('#book-date');
   const timeSelect = $('#book-time');
-  const qtyInput = $('#book-qty');
   const dateHint = $('#date-hint');
   const bookingMessage = $('#booking-message');
   const bookingDialog = $('#booking-dialog');
@@ -295,14 +296,27 @@
       timeSelect.appendChild(opt);
     }
   }
+  function pickedTickets() {
+    return ticketBoxes.filter((box) => box.checked).map((box) => {
+      const row = box.closest('.ticket-option');
+      const qty = Math.min(10, Math.max(1, parseInt(row.querySelector('[data-qty]').value, 10) || 1));
+      const id = box.value;
+      return { id: id, name: TICKETS[id].name, price: TICKETS[id].price, qty: qty, total: TICKETS[id].price * qty };
+    });
+  }
   function updateTotal() {
-    const ticket = TICKETS[ticketSelect.value] || TICKETS.general;
-    $('#booking-total').textContent = money(ticket.price * (parseInt(qtyInput.value, 10) || 1));
-    $$('.ticket-card').forEach((card) => card.classList.toggle('is-selected', card.dataset.ticket === ticketSelect.value));
+    const items = pickedTickets();
+    const total = items.reduce((sum, item) => sum + item.total, 0);
+    $('#booking-total').textContent = money(total);
+    ticketBoxes.forEach((box) => box.closest('.ticket-option').classList.toggle('is-picked', box.checked));
+    $$('.ticket-card').forEach((card) => card.classList.toggle('is-selected', items.some((item) => item.id === card.dataset.ticket)));
+    return items;
   }
   function setTicket(id, scroll) {
     if (!TICKETS[id]) return;
-    ticketSelect.value = id;
+    const box = ticketBoxes.find((b) => b.value === id);
+    if (!box) return;
+    box.checked = true;
     updateTotal();
     if (scroll !== false) {
       $('#booking-panel').scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -310,10 +324,13 @@
     }
   }
   $$('[data-select-ticket]').forEach((btn) => btn.addEventListener('click', () => setTicket(btn.dataset.selectTicket, true)));
-  ticketSelect.addEventListener('change', updateTotal);
-  $$('.stepper button').forEach((btn) => btn.addEventListener('click', () => {
-    const next = (parseInt(qtyInput.value, 10) || 1) + Number(btn.dataset.step);
-    qtyInput.value = Math.min(10, Math.max(1, next));
+  ticketBoxes.forEach((box) => box.addEventListener('change', updateTotal));
+  $$('#book-tickets .stepper button').forEach((btn) => btn.addEventListener('click', () => {
+    const row = btn.closest('.ticket-option');
+    const input = row.querySelector('[data-qty]');
+    const next = (parseInt(input.value, 10) || 1) + Number(btn.dataset.step);
+    input.value = Math.min(10, Math.max(1, next));
+    if (Number(btn.dataset.step) > 0) row.querySelector('input[type="checkbox"]').checked = true;
     updateTotal();
   }));
 
@@ -366,8 +383,11 @@
     e.preventDefault();
     const name = $('#book-name').value.trim();
     const phone = $('#book-phone').value.replace(/[\s()-]/g, '');
-    const ticket = TICKETS[ticketSelect.value] || TICKETS.general;
-    const qty = parseInt(qtyInput.value, 10) || 1;
+    const items = pickedTickets();
+    if (!items.length) { bookingMessage.textContent = t('noTicket'); return; }
+    const qty = items.reduce((sum, item) => sum + item.qty, 0);
+    const total = items.reduce((sum, item) => sum + item.total, 0);
+    const ticketName = items.map((item) => item.name + ' ×' + item.qty).join(' + ');
 
     if (!dateInput.value) { bookingMessage.textContent = t('noDate'); dateInput.focus(); return; }
     if (dateInput.value < isoDate(new Date())) { bookingMessage.textContent = t('pastDate'); dateInput.focus(); return; }
@@ -377,14 +397,15 @@
 
     const booking = {
       ref: 'TLB-' + new Date().getFullYear() + '-' + Math.random().toString(36).slice(2, 6).toUpperCase(),
-      ticket: ticketSelect.value,
-      ticketName: ticket.name,
+      ticket: items.map((item) => item.id).join(','),
+      ticketName: ticketName,
+      items: items,
       date: dateInput.value,
       time: timeSelect.value,
       qty: qty,
       name: name,
       phone: phone,
-      total: ticket.price * qty,
+      total: total,
       created: new Date().toISOString()
     };
     const list = readBookings();
@@ -406,7 +427,10 @@
     toast(t('toastBooking') + booking.ref);
     $('#book-name').value = '';
     $('#book-phone').value = '';
-    qtyInput.value = 1;
+    ticketBoxes.forEach((box, i) => {
+      box.checked = i === 0;
+      box.closest('.ticket-option').querySelector('[data-qty]').value = 1;
+    });
     updateTotal();
   });
 
@@ -419,7 +443,7 @@
     }
     container.innerHTML = list.map((b, i) =>
       '<div class="booking-row">' +
-        '<div><strong>' + b.ref + '</strong><p>' + (b.ticketName || TICKETS[b.ticket].name) + ' · ' + b.qty + ' ' + t('ticketUnit') + ' · ' + money(b.total || 0) + '</p>' +
+        '<div><strong>' + b.ref + '</strong><p>' + (b.ticketName || (TICKETS[b.ticket] ? TICKETS[b.ticket].name : b.ticket)) + ' · ' + b.qty + ' ' + t('ticketUnit') + ' · ' + money(b.total || 0) + '</p>' +
         '<p>' + readableDate(b.date) + ' — ' + b.time + '</p></div>' +
         '<button type="button" data-cancel-booking="' + i + '">' + t('cancel') + '</button>' +
       '</div>'

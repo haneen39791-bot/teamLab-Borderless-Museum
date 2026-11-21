@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=12">
+  <link rel="stylesheet" href="assets/css/style.css?v=16">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -336,14 +336,54 @@
           </div>
           <form id="booking-form" novalidate>
             <div class="form-grid">
-              <div class="field">
-                <label for="book-ticket">Ticket type</label>
-                <select id="book-ticket" name="ticket" required>
-                  <option value="general">General Admission — 120 SAR</option>
-                  <option value="child">Child Ticket — 80 SAR</option>
-                  <option value="family">Family Ticket — 350 SAR</option>
-                  <option value="vip">VIP Experience — 250 SAR</option>
-                </select>
+              <div class="field field--tickets">
+                <span class="field-label" id="book-tickets-label">Ticket type (choose more than one)</span>
+                <div class="ticket-options" id="book-tickets" role="group" aria-labelledby="book-tickets-label">
+                  <div class="ticket-option is-picked">
+                    <label class="ticket-option__check">
+                      <input type="checkbox" name="ticket" value="general" checked>
+                      <span class="ticket-option__name">General Admission — 120 SAR</span>
+                    </label>
+                    <span class="stepper stepper--mini">
+                      <button type="button" data-step="-1" aria-label="Decrease quantity">−</button>
+                      <input type="number" value="1" min="1" max="10" aria-label="Quantity" data-qty>
+                      <button type="button" data-step="1" aria-label="Increase quantity">+</button>
+                    </span>
+                  </div>
+                  <div class="ticket-option">
+                    <label class="ticket-option__check">
+                      <input type="checkbox" name="ticket" value="child">
+                      <span class="ticket-option__name">Child Ticket — 80 SAR</span>
+                    </label>
+                    <span class="stepper stepper--mini">
+                      <button type="button" data-step="-1" aria-label="Decrease quantity">−</button>
+                      <input type="number" value="1" min="1" max="10" aria-label="Quantity" data-qty>
+                      <button type="button" data-step="1" aria-label="Increase quantity">+</button>
+                    </span>
+                  </div>
+                  <div class="ticket-option">
+                    <label class="ticket-option__check">
+                      <input type="checkbox" name="ticket" value="family">
+                      <span class="ticket-option__name">Family Ticket — 350 SAR</span>
+                    </label>
+                    <span class="stepper stepper--mini">
+                      <button type="button" data-step="-1" aria-label="Decrease quantity">−</button>
+                      <input type="number" value="1" min="1" max="10" aria-label="Quantity" data-qty>
+                      <button type="button" data-step="1" aria-label="Increase quantity">+</button>
+                    </span>
+                  </div>
+                  <div class="ticket-option">
+                    <label class="ticket-option__check">
+                      <input type="checkbox" name="ticket" value="vip">
+                      <span class="ticket-option__name">VIP Experience — 250 SAR</span>
+                    </label>
+                    <span class="stepper stepper--mini">
+                      <button type="button" data-step="-1" aria-label="Decrease quantity">−</button>
+                      <input type="number" value="1" min="1" max="10" aria-label="Quantity" data-qty>
+                      <button type="button" data-step="1" aria-label="Increase quantity">+</button>
+                    </span>
+                  </div>
+                </div>
               </div>
               <div class="field">
                 <label for="book-date">Visit date</label>
@@ -353,14 +393,6 @@
               <div class="field">
                 <label for="book-time">Time</label>
                 <select id="book-time" name="time" required></select>
-              </div>
-              <div class="field">
-                <label for="book-qty">Number of tickets</label>
-                <div class="stepper">
-                  <button type="button" data-step="-1" aria-label="Decrease quantity">−</button>
-                  <input id="book-qty" name="qty" type="number" value="1" min="1" max="10" readonly>
-                  <button type="button" data-step="1" aria-label="Increase quantity">+</button>
-                </div>
               </div>
               <div class="field">
                 <label for="book-name">Full name</label>
@@ -612,7 +644,7 @@
       <div class="footer-brand">
         <a class="brand" href="#home">
           <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M24 24c-5-8-9-11-13-11C6 13 3 17 3 22s3 9 8 9c5 0 9-4 13-7 4 3 8 7 13 7 5 0 8-4 8-9s-3-9-8-9c-4 0-8 3-13 11Z"/></svg>
+            <img src="assets/img/Logo.png" alt="" width="30" height="30">
           </span>
           <span class="brand-text"><strong>teamLab Borderless</strong><small>Jeddah · Saudi Arabia</small></span>
         </a>
@@ -723,6 +755,6 @@
     </div>
   </dialog>
 
-  <script src="assets/js/main.js?v=9"></script>
+  <script src="assets/js/main.js?v=12"></script>
 </body>
 </html>

@@ -286,10 +286,17 @@ ul { padding: 0; list-style: none; }
 }
 .feature-icon {
   display: grid; place-items: center; width: 58px; height: 58px; margin: 0 auto 16px;
-  border-radius: 17px; font-size: 1.7rem; background: var(--grad); color: #fff; box-shadow: 0 12px 30px rgba(251, 191, 36, .3);
+  border-radius: 17px; font-size: 1.7rem; color: #fff;
+  background: linear-gradient(135deg, #60a5fa, #3b82f6); box-shadow: 0 12px 30px rgba(59, 130, 246, .32);
 }
 .feature-card h3 { font-size: 1.08rem; margin-bottom: 8px; }
 .feature-card p { color: var(--muted); font-size: .88rem; }
+/* A soft light blue replaces the old yellow/violet accent in this section only.
+   Use background-image (not the shorthand) so background-clip:text is preserved. */
+#difference .section-title {
+  background-image: linear-gradient(100deg, #fff 20%, #5eead4 70%, #93c5fd);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
 
 /* ---------------- Tickets & Booking ---------------- */
 .ticket-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
@@ -447,6 +454,39 @@ html[lang="en"] .gallery-rail { animation-direction: reverse; }
 .contact-form .btn { margin-top: 8px; }
 .form-status { min-height: 22px; margin-top: 8px; font-size: .84rem; color: var(--c1); }
 .form-status.is-error { color: var(--c4); }
+
+/* ---------------- Compact direct-booking form (multiple ticket types) ---------------- */
+.field--tickets { grid-column: 1 / -1; }
+.field-label { font-size: .82rem; font-weight: 700; color: #e8f4f8; }
+.ticket-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.field .ticket-option {
+  display: flex; align-items: center; gap: 8px; padding: 7px 9px;
+  border: 1px solid var(--line); border-radius: 10px; background: rgba(255, 255, 255, .025);
+}
+.field .ticket-option.is-picked { border-color: rgba(45, 212, 191, .45); background: rgba(45, 212, 191, .07); }
+.field .ticket-option__check { display: flex; align-items: center; gap: 7px; flex: 1; min-width: 0; cursor: pointer; font-size: .78rem; font-weight: 500; color: #e8f4f8; }
+.ticket-option input[type="checkbox"] { width: 15px; height: 15px; flex: 0 0 auto; padding: 0; border: 0; border-radius: 3px; background: transparent; accent-color: var(--c1); }
+.ticket-option__name { line-height: 1.35; }
+.stepper--mini button { width: 26px; font-size: 1rem; }
+.stepper--mini input { width: 34px; padding: 5px 0; font-size: .8rem; }
+
+/* Compact direct-booking form: smaller paddings, gaps and controls */
+.booking-panel { margin-top: 28px; padding: 18px; }
+.booking-panel form { padding: 16px 18px; }
+.booking-head { margin-bottom: 12px; }
+.booking-head h3 { font-size: 1.15rem; }
+.booking-panel .form-grid { gap: 10px; }
+.booking-panel .field { gap: 4px; }
+.booking-panel .field input, .booking-panel .field select { padding: 7px 10px; font-size: .84rem; }
+.booking-panel .field label, .booking-panel .field-label { font-size: .72rem; }
+.booking-summary { margin-top: 14px; padding-top: 12px; }
+.booking-summary > div strong { font-size: 1.25rem; }
+.ticket-options { gap: 6px; }
+.field .ticket-option { padding: 5px 7px; }
+.field .ticket-option__check { font-size: .74rem; }
+.stepper--mini button { width: 22px; font-size: .9rem; }
+.stepper--mini input { width: 30px; padding: 3px 0; font-size: .76rem; }
+@media (max-width: 720px) { .ticket-options { grid-template-columns: 1fr; } }
 
 /* ---------------- Closing ---------------- */
 .closing { position: relative; padding: 110px 0; text-align: center; overflow: hidden; border-top: 1px solid var(--line); background: linear-gradient(180deg, rgba(20, 29, 46, .5), var(--bg)); }
